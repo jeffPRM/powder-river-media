@@ -377,7 +377,7 @@
 
     #loader-icon {
       display: block;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
     }
 
     #loader-wordmark {
@@ -387,13 +387,13 @@
       animation: loaderWordmark 0.7s 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
     #loader-name {
-      font-family: var(--cs); font-size: 22px; font-weight: 600;
+      font-family: var(--cs); font-size: 44px; font-weight: 600;
       letter-spacing: .1em; color: #FAFAF8;
     }
     #loader-sub {
-      font-family: var(--fb); font-size: 9px; font-weight: 500;
+      font-family: var(--fb); font-size: 18px; font-weight: 500;
       letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.38);
-      margin-top: 5px;
+      margin-top: 10px;
     }
 
     @keyframes loaderWordmark {
@@ -415,7 +415,7 @@
     #loader-river {
       stroke-dasharray: 200;
       stroke-dashoffset: 200;
-      animation: riverDraw 2.35s 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      animation: riverDraw 3.45s 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     }
     @keyframes riverDraw {
       to { stroke-dashoffset: 0; }
@@ -457,7 +457,7 @@
 
   <!-- LOADER -->
   <div id="loader">
-    <svg id="loader-icon" width="138" height="60" viewBox="2 16.5 36 17" fill="none">
+    <svg id="loader-icon" width="120" height="52" viewBox="2 16.5 36 17" fill="none">
       <line id="loader-bar" x1="4" y1="18" x2="36" y2="18" stroke="rgba(255,255,255,0.35)" stroke-width="1.8" stroke-linecap="square"/>
       <path id="loader-river" d="M4 26 Q12 20 20 26 Q28 32 36 26" stroke="#3ABFBF" stroke-width="2.4" fill="none" stroke-linecap="square"/>
     </svg>
@@ -626,11 +626,9 @@
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Dismiss loader after animation completes
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.getElementById('loader').classList.add('hidden');
-      }, 4200);
-    });
+    setTimeout(() => {
+      document.getElementById('loader').classList.add('hidden');
+    }, 4200);
 
     // Nav scroll
     const nav = document.getElementById('main-nav');
