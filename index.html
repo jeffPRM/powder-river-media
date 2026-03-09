@@ -216,7 +216,11 @@
 
     /* ABOUT */
     #about {
-      padding: 112px 56px; max-width: 1100px; margin: 0 auto;
+      background: var(--bg);
+      padding: 112px 56px;
+    }
+    .about-inner {
+      max-width: 1100px; margin: 0 auto;
       display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px; align-items: center;
     }
     .about-body {
@@ -432,7 +436,8 @@
       nav { padding: 16px 24px; }
       .nav-cta { padding: 8px 14px; font-size: 10px; white-space: nowrap; }
       .hero-corner { display: none; }
-      #about { grid-template-columns: 1fr; gap: 48px; padding: 72px 24px; }
+      .about-inner { grid-template-columns: 1fr; gap: 48px; }
+      #about { padding: 72px 24px; }
       .pillars-grid { grid-template-columns: 1fr; }
       #pillars { padding: 72px 24px; }
       .services-inner { overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; justify-content: flex-start; width: 100%; max-width: 100%; }
@@ -519,26 +524,41 @@
         <span class="svc-name">Video Tours</span>
       </div>
       <div class="svc-item">
-        <!-- Drone: quadcopter shape -->
+        <!-- Drone: front-on view matching first uploaded reference -->
         <svg class="svc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="2"/>
-          <line x1="12" y1="10" x2="12" y2="6"/>
-          <line x1="12" y1="14" x2="12" y2="18"/>
-          <line x1="10" y1="12" x2="6" y2="12"/>
-          <line x1="14" y1="12" x2="18" y2="12"/>
-          <circle cx="6" cy="6" r="2"/>
-          <circle cx="18" cy="6" r="2"/>
-          <circle cx="6" cy="18" r="2"/>
-          <circle cx="18" cy="18" r="2"/>
+          <!-- Body -->
+          <ellipse cx="12" cy="10" rx="3.5" ry="2.5"/>
+          <!-- Arms -->
+          <line x1="8.5" y1="9" x2="4" y2="7"/>
+          <line x1="15.5" y1="9" x2="20" y2="7"/>
+          <!-- Propellers -->
+          <path d="M2 6.5 Q4 5.5 6 6.5"/>
+          <path d="M2 7.5 Q4 8.5 6 7.5"/>
+          <path d="M18 6.5 Q20 5.5 22 6.5"/>
+          <path d="M18 7.5 Q20 8.5 22 7.5"/>
+          <!-- Landing legs -->
+          <line x1="9.5" y1="12" x2="8" y2="16"/>
+          <line x1="14.5" y1="12" x2="16" y2="16"/>
+          <line x1="7" y1="16" x2="10" y2="16"/>
+          <line x1="14" y1="16" x2="17" y2="16"/>
+          <!-- Camera -->
+          <rect x="10.5" y="12.5" width="3" height="2.5" rx="0.5"/>
+          <circle cx="12" cy="13.75" r="0.7"/>
         </svg>
         <span class="svc-name">Drone</span>
       </div>
       <div class="svc-item">
-        <!-- Floor plans: ruler/grid layout -->
+        <!-- Floor plan: based on reference image — L-shaped rooms with door gaps -->
         <svg class="svc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="2" width="20" height="20" rx="1"/>
-          <path d="M2 9h20"/>
-          <path d="M9 9v13"/>
+          <!-- Outer walls: main rectangle minus notch bottom-right -->
+          <polyline points="2,4 2,20 15,20 15,16 20,16 20,4 2,4"/>
+          <!-- Interior wall: vertical divider -->
+          <line x1="11" y1="4" x2="11" y2="13"/>
+          <!-- Interior wall: horizontal divider -->
+          <line x1="11" y1="10" x2="20" y2="10"/>
+          <!-- Door gaps (breaks in wall suggesting openings) -->
+          <line x1="5" y1="20" x2="8" y2="20"/>
+          <line x1="15" y1="13" x2="15" y2="16"/>
         </svg>
         <span class="svc-name">Floor Plans</span>
       </div>
@@ -547,16 +567,18 @@
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="reveal">
-      <p class="section-eyebrow">About Powder River Media</p>
-      <h2 class="section-title">Where <span class="aqua">craft</span> meets<br>the Maryland market.</h2>
-      <p class="about-body">Powder River Media was built on a single belief: every listing deserves imagery that does it justice. We combine technical precision with a genuine eye for light, space, and story — producing media assets that move listings, not just document them.</p>
-      <p class="about-body">Based in Baltimore, we serve agents, brokers, and sellers across Central Maryland. From intimate row homes to waterfront estates, every property is treated as a unique visual opportunity.</p>
-    </div>
-    <div class="reveal">
-      <div class="about-card">
-        <p class="about-card-headline">Professional Media That Reflects Your Brand</p>
-        <p class="about-card-body">The photos you put on a listing say as much about you as they do about the property. Sharp, consistent, well-lit imagery tells buyers — and future clients — that you take your business seriously.</p>
+    <div class="about-inner">
+      <div class="reveal">
+        <p class="section-eyebrow">About Powder River Media</p>
+        <h2 class="section-title">Where <span class="aqua">craft</span> meets<br>the Maryland market.</h2>
+        <p class="about-body">Powder River Media was built on a single belief: every listing deserves imagery that does it justice. We combine technical precision with a genuine eye for light, space, and story — producing media assets that move listings, not just document them.</p>
+        <p class="about-body">Based in Baltimore, we serve agents, brokers, and sellers across Central Maryland. From intimate row homes to waterfront estates, every property is treated as a unique visual opportunity.</p>
+      </div>
+      <div class="reveal">
+        <div class="about-card">
+          <p class="about-card-headline">Professional Media That Reflects Your Brand</p>
+          <p class="about-card-body">The photos you put on a listing say as much about you as they do about the property. Sharp, consistent, well-lit imagery tells buyers — and future clients — that you take your business seriously.</p>
+        </div>
       </div>
     </div>
   </section>
