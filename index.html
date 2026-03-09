@@ -51,7 +51,8 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
@@ -372,55 +373,50 @@
       position: fixed; inset: 0; z-index: 9999;
       background: var(--dark);
       display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 0;
-      transition: opacity 0.9s ease, visibility 0.9s ease;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
     }
-    #loader.hidden { opacity: 0; visibility: hidden; }
+    #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 
     #loader-icon {
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 10px;
+      /* slight scale-up so the animation reads clearly */
+      width: 160px; height: 70px;
     }
 
-    #loader-wordmark {
-      display: flex; flex-direction: column; align-items: center;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: loaderWordmark 0.7s 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    }
-    #loader-name {
-      font-family: var(--cs); font-size: 44px; font-weight: 600;
-      letter-spacing: .1em; color: #FAFAF8;
-    }
-    #loader-sub {
-      font-family: var(--fb); font-size: 18px; font-weight: 500;
-      letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.38);
-      margin-top: 10px;
-    }
-
-    @keyframes loaderWordmark {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Horizon bar drop */
+    /* 1. Bar: visible immediately, no animation needed */
     #loader-bar {
-      animation: barDrop 0.45s 0.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      opacity: 0;
-    }
-    @keyframes barDrop {
-      from { opacity: 0; transform: translateY(-18px); }
-      to   { opacity: 1; transform: translateY(0); }
+      opacity: 1;
     }
 
     /* River draw — slow and deliberate */
     #loader-river {
       stroke-dasharray: 200;
       stroke-dashoffset: 200;
-      animation: riverDraw 3.45s 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      animation: riverDraw 2.2s 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     }
     @keyframes riverDraw {
       to { stroke-dashoffset: 0; }
+    }
+
+    /* 4. Wordmark: fades in at 0.6s (river is just starting), well before it finishes */
+    #loader-wordmark {
+      display: flex; flex-direction: column; align-items: center;
+      opacity: 0;
+      animation: loaderWordmark 0.8s 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    @keyframes loaderWordmark {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    #loader-name {
+      font-family: var(--cs); font-size: 44px; font-weight: 600;
+      letter-spacing: .1em; color: #FAFAF8;
+    }
+    #loader-sub {
+      font-family: var(--fb); font-size: 10px; font-weight: 500;
+      letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.38);
+      margin-top: 8px;
     }
 
     /* ANIMATIONS */
@@ -460,8 +456,10 @@
 
   <!-- LOADER -->
   <div id="loader">
-    <svg id="loader-icon" width="120" height="52" viewBox="2 16.5 36 17" fill="none">
+    <svg id="loader-icon" width="160" height="70" viewBox="2 16.5 36 17" fill="none">
+      <!-- 1. Bar: always visible -->
       <line id="loader-bar" x1="4" y1="18" x2="36" y2="18" stroke="rgba(255,255,255,0.35)" stroke-width="1.8" stroke-linecap="square"/>
+      <!-- 2. River draw -->
       <path id="loader-river" d="M4 26 Q12 20 20 26 Q28 32 36 26" stroke="#3ABFBF" stroke-width="2.4" fill="none" stroke-linecap="square"/>
     </svg>
     <div id="loader-wordmark">
@@ -620,14 +618,11 @@
         <a href="https://www.instagram.com/powderriver.media" target="_blank" rel="noopener">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@powderriver.media
         </a>
-        <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#112;&#111;&#119;&#100;&#101;&#114;&#114;&#105;&#118;&#101;&#114;&#109;&#101;&#100;&#105;&#97;&#46;&#99;&#111;&#109;">info&#64;powderrivermedia.com</a>
+        <a href="mailto:info@powderrivermedia.com">info@powderrivermedia.com</a>
         <a href="tel:2406542145">(240) 654-2145</a>
-        <a href="mailto:info&#64;powderrivermedia.com">info&#64;powderrivermedia.com</a>
       </div>
       <div class="footer-legal">© 2026 Powder River Media. All rights reserved.</div>
     </div>
-  </footer>
-
   </footer>
 
   <script>
@@ -635,23 +630,12 @@
       var loader = document.getElementById('loader');
       if (loader) loader.classList.add('hidden');
     }
-    setTimeout(dismissLoader, 4200);
-    setTimeout(dismissLoader, 6000);
+    setTimeout(dismissLoader, 3200);
 
     var nav = document.getElementById('main-nav');
     window.addEventListener('scroll', function() {
       nav.classList.toggle('scrolled', window.scrollY > 30);
     }, { passive: true });
-
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e, i) {
-        if (e.isIntersecting) {
-          setTimeout(function() { e.target.classList.add('visible'); }, i * 90);
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
   </script>
 </body>
 </html>
