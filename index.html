@@ -365,12 +365,64 @@
     .footer-links a:hover { color: var(--gold-l); text-decoration: underline; }
     .footer-legal { font-family: var(--fb); font-size: 11px; letter-spacing: .06em; color: rgba(255,255,255,.18); margin-top: 10px; }
 
+    /* LOADER */
+    #loader {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--dark);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 24px;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+    #loader.hidden { opacity: 0; visibility: hidden; }
+
+    #loader-wordmark {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      opacity: 0; animation: loaderWordmark 0.6s 1.6s ease forwards;
+    }
+    #loader-name {
+      font-family: var(--cs); font-size: 28px; font-weight: 600;
+      letter-spacing: .1em; color: #FAFAF8;
+    }
+    #loader-sub {
+      font-family: var(--fb); font-size: 9px; font-weight: 500;
+      letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.3);
+    }
+
+    @keyframes loaderWordmark {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    /* Horizon bar drop */
+    #loader-bar {
+      animation: barDrop 0.45s 0.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      opacity: 0;
+    }
+    @keyframes barDrop {
+      from { opacity: 0; transform: translateY(-18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* River draw */
+    #loader-river {
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      animation: riverDraw 0.9s 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    @keyframes riverDraw {
+      to { stroke-dashoffset: 0; }
+    }
+
     /* ANIMATIONS */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    .reveal { opacity: 1; transform: none; }
+    .reveal {
+      opacity: 0; transform: translateY(26px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
 
     /* RESPONSIVE */
     @media (max-width: 860px) {
@@ -394,6 +446,18 @@
   </style>
 </head>
 <body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <svg width="100" height="100" viewBox="0 0 40 40" fill="none">
+      <line id="loader-bar" x1="4" y1="18" x2="36" y2="18" stroke="rgba(255,255,255,0.35)" stroke-width="1.8" stroke-linecap="square"/>
+      <path id="loader-river" d="M4 26 Q12 20 20 26 Q28 32 36 26" stroke="#3ABFBF" stroke-width="2.4" fill="none" stroke-linecap="square"/>
+    </svg>
+    <div id="loader-wordmark">
+      <div id="loader-name">Powder River</div>
+      <div id="loader-sub">Real Estate Media</div>
+    </div>
+  </div>
 
   <!-- NAV -->
   <nav id="main-nav">
@@ -545,12 +609,37 @@
         <a href="https://www.instagram.com/powderriver.media" target="_blank" rel="noopener">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@powderriver.media
         </a>
-        <a href="/cdn-cgi/l/email-protection#0f666169604f7f60786b6a7d7d66796a7d626a6b666e216c6062"><span class="__cf_email__" data-cfemail="8ce5e2eae3ccfce3fbe8e9fefee5fae9fee1e9e8e5eda2efe3e1">[email&#160;protected]</span></a>
+        <a href="mailto:info@powderrivermedia.com">info@powderrivermedia.com</a>
         <a href="tel:2406542145">(240) 654-2145</a>
       </div>
       <div class="footer-legal">© 2026 Powder River Media. All rights reserved.</div>
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    const nav = document.getElementById('main-nav'
+  <script>
+    // Dismiss loader after animation completes (~2.4s)
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+      }, 2400);
+    });
+
+    // Nav scroll
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 30);
+    }, { passive: true });
+
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 90);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
