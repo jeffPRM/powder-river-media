@@ -624,31 +624,30 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Dismiss loader - multiple fallbacks to ensure it always hides
+  </footer>
+
+  <script>
     function dismissLoader() {
-      const loader = document.getElementById('loader');
+      var loader = document.getElementById('loader');
       if (loader) loader.classList.add('hidden');
     }
-
-    // Primary: fire after animation completes
     setTimeout(dismissLoader, 4200);
-
-    // Fallback 1: fire on DOMContentLoaded if that comes first
-    document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(dismissLoader, 4200);
-    });
-
-    // Fallback 2: hard cap at 6 seconds no matter what
     setTimeout(dismissLoader, 6000);
 
-    // Nav scroll
-    const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => {
+    var nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', function() {
       nav.classList.toggle('scrolled', window.scrollY > 30);
     }, { passive: true });
 
-    // Scroll reveal
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting)
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e, i) {
+        if (e.isIntersecting) {
+          setTimeout(function() { e.target.classList.add('visible'); }, i * 90);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+  </script>
+</body>
+</html>
