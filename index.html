@@ -114,19 +114,28 @@
     .nav-link {
       font-family: var(--fb); font-size: 11px; font-weight: 500;
       letter-spacing: .16em; text-transform: uppercase;
-      color: rgba(250,250,248,.55); text-decoration: none;
+      color: rgba(250,250,248,.85); text-decoration: none;
       transition: color 0.3s;
     }
     .nav-link:hover { color: var(--gold); }
     .nav-cta {
       font-family: var(--fb); font-size: 11px; font-weight: 500;
       letter-spacing: .16em; text-transform: uppercase;
-      color: var(--gold); text-decoration: none;
-      border: 1px solid rgba(201,184,130,0.4); padding: 10px 24px;
-      transition: all 0.3s;
+      color: var(--aqua); text-decoration: none;
+      border: 1px solid rgba(58,191,191,0.6); padding: 10px 24px;
+      transition: all 0.4s;
     }
-    .nav-cta:hover { background: transparent; color: var(--aqua); border-color: var(--aqua); }
-    @media (max-width: 860px) { .nav-link { display: none; } }
+    .nav-cta:hover { color: #fff; border-color: var(--aqua); }
+    nav.scrolled .nav-cta {
+      color: var(--gold);
+      border-color: rgba(201,184,130,0.4);
+    }
+    nav.scrolled .nav-cta:hover { color: var(--aqua); border-color: var(--aqua); }
+    @media (max-width: 860px) {
+      nav { padding: 14px 20px; }
+      .nav-link { font-size: 10px; letter-spacing: .12em; }
+      .nav-cta { padding: 8px 14px; font-size: 10px; white-space: nowrap; }
+    }
 
     /* HERO */
     #hero {
@@ -137,12 +146,11 @@
       position: relative; overflow: hidden;
     }
     #hero-bg {
-      position: absolute; inset: 0; z-index: 0;
+      position: absolute;
+      top: -25%; left: 0; right: 0; height: 150%;
+      z-index: 0;
       background: url('baltimore-real-estate-photography-living-room-coastal-natural-light.jpg') center center / cover no-repeat;
-      transform: scale(1.04);
-      transition: transform 8s ease;
     }
-    #hero-bg.loaded { transform: scale(1); }
     #hero::before {
       content: ''; position: absolute; inset: 0; z-index: 1;
       background: linear-gradient(to bottom,
@@ -156,9 +164,9 @@
                         linear-gradient(0deg,rgba(255,255,255,.008) 1px,transparent 1px);
       background-size: 64px 64px;
     }
-    .hero-corner { position: absolute; width: 50px; height: 50px; opacity: .18; z-index: 3; }
-    .hero-corner.tl { top: 88px; left: 56px; border-top: 1px solid var(--gold); border-left: 1px solid var(--gold); }
-    .hero-corner.tr { top: 88px; right: 56px; border-top: 1px solid var(--gold); border-right: 1px solid var(--gold); }
+    .hero-corner { position: absolute; width: 50px; height: 50px; opacity: .45; z-index: 3; }
+    .hero-corner.tl { top: 155px; left: 56px; border-top: 1px solid var(--gold); border-left: 1px solid var(--gold); }
+    .hero-corner.tr { top: 155px; right: 56px; border-top: 1px solid var(--gold); border-right: 1px solid var(--gold); }
     .hero-corner.bl { bottom: 48px; left: 56px; border-bottom: 1px solid var(--gold); border-left: 1px solid var(--gold); }
     .hero-corner.br { bottom: 48px; right: 56px; border-bottom: 1px solid var(--gold); border-right: 1px solid var(--gold); }
     .hero-rule {
@@ -217,6 +225,90 @@
     .svc-name {
       font-family: var(--fb); font-size: 10px; font-weight: 600;
       letter-spacing: .18em; text-transform: uppercase; color: var(--mid);
+    }
+
+    /* PORTFOLIO PREVIEW */
+    #portfolio-preview {
+      background: #2D2D2D;
+      padding: 96px 56px 100px;
+    }
+    .preview-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .preview-header .section-title { color: #FAFAF8; }
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .preview-card {
+      display: block;
+      text-decoration: none;
+      background: #363636;
+      border: 1px solid rgba(201,184,130,0.18);
+      transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+      overflow: hidden;
+    }
+    .preview-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 56px rgba(0,0,0,0.55);
+      border-color: rgba(201,184,130,0.5);
+    }
+    .preview-card-photo {
+      position: relative;
+      overflow: hidden;
+    }
+    .preview-card-photo img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .preview-card:hover .preview-card-photo img { transform: scale(1.04); }
+    .preview-card-photo-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(29,43,46,0.7) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      display: flex; align-items: flex-end; justify-content: center;
+      padding-bottom: 20px;
+    }
+    .preview-card:hover .preview-card-photo-overlay { opacity: 1; }
+    .preview-card-photo-overlay span {
+      font-family: var(--fb); font-size: 10px; font-weight: 600;
+      letter-spacing: .2em; text-transform: uppercase; color: #FAFAF8;
+    }
+    .preview-card-body {
+      padding: 18px 22px 20px;
+      border-top: 1px solid rgba(201,184,130,0.12);
+      display: flex; flex-direction: column; gap: 7px;
+    }
+    .preview-card-meta {
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .preview-card-tag {
+      font-family: var(--fb); font-size: 9px; font-weight: 600;
+      letter-spacing: .22em; text-transform: uppercase; color: var(--gold);
+    }
+    .preview-card-num {
+      font-family: var(--cs); font-size: 15px; font-weight: 600;
+      color: rgba(201,184,130,0.3);
+    }
+    .preview-card-caption {
+      font-family: var(--fb); font-size: 13px; font-weight: 300;
+      line-height: 1.6; color: rgba(250,250,248,0.6);
+    }
+    .preview-cta {
+      text-align: center;
+      margin-top: 56px;
+    }
+    @media (max-width: 860px) {
+      #portfolio-preview { padding: 72px 24px 80px; }
+      .preview-grid { grid-template-columns: 1fr; gap: 12px; }
     }
 
     /* SHARED */
@@ -379,9 +471,7 @@
       padding: 52px 56px; display: flex; align-items: center;
       justify-content: space-between; flex-wrap: wrap; gap: 28px;
     }
-    .footer-logo { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; }
-    .footer-name { font-family: var(--cs); font-size: 15px; font-weight: 600; letter-spacing: .08em; color: #FAFAF8; }
-    .footer-sub { font-family: var(--fb); font-size: 8px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.28); margin-top: 4px; }
+    .footer-logo { display: inline-flex; align-items: center; text-decoration: none; }
     .footer-right { text-align: right; }
     .footer-links { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
     .footer-links a { font-family: var(--fb); font-size: 13px; font-weight: 300; color: var(--gold); text-decoration: none; transition: color 0.25s; }
@@ -489,7 +579,7 @@
   <!-- NAV -->
   <nav id="main-nav">
     <a href="index.html" class="nav-logo">
-      <img src="logo-horizontal.png" alt="Powder River Media" style="height:44px; width:auto;" />
+      <img src="logo-nav.svg" alt="Powder River Media" style="height:124px; width:auto;" />
     </a>
     <div class="nav-links">
       <a href="portfolio.html" class="nav-link">Portfolio</a>
@@ -596,6 +686,58 @@
     </div>
   </section>
 
+  <!-- PORTFOLIO PREVIEW -->
+  <section id="portfolio-preview">
+    <div class="preview-header">
+      <p class="section-eyebrow">Our Work</p>
+      <h2 class="section-title">Every listing,<br><span class="aqua">at its best.</span></h2>
+    </div>
+    <div class="preview-grid">
+      <a href="portfolio.html" class="preview-card">
+        <div class="preview-card-photo">
+          <img src="baltimore-real-estate-photography-kitchen-island-waterfront-view.jpg" alt="Open kitchen with island seating and waterfront views, real estate photography Baltimore MD" />
+          <div class="preview-card-photo-overlay"><span>View Portfolio &rarr;</span></div>
+        </div>
+        <div class="preview-card-body">
+          <div class="preview-card-meta">
+            <span class="preview-card-tag">Kitchen &amp; Dining</span>
+            <span class="preview-card-num">01</span>
+          </div>
+          <p class="preview-card-caption">True color, balanced exposure — no blown-out windows.</p>
+        </div>
+      </a>
+      <a href="portfolio.html" class="preview-card">
+        <div class="preview-card-photo">
+          <img src="baltimore-real-estate-photography-kitchen-navy-cabinets-open-plan.jpg" alt="Modern open-plan kitchen with navy cabinets and island, real estate photography Baltimore MD" />
+          <div class="preview-card-photo-overlay"><span>View Portfolio &rarr;</span></div>
+        </div>
+        <div class="preview-card-body">
+          <div class="preview-card-meta">
+            <span class="preview-card-tag">Open-Plan Living</span>
+            <span class="preview-card-num">02</span>
+          </div>
+          <p class="preview-card-caption">Full-room perspective that shows buyers everything they need to see.</p>
+        </div>
+      </a>
+      <a href="portfolio.html" class="preview-card">
+        <div class="preview-card-photo">
+          <img src="baltimore-real-estate-photography-primary-bedroom-blue-accent-decor.jpg" alt="Staged primary bedroom with blue accent decor, real estate photography Central Maryland" />
+          <div class="preview-card-photo-overlay"><span>View Portfolio &rarr;</span></div>
+        </div>
+        <div class="preview-card-body">
+          <div class="preview-card-meta">
+            <span class="preview-card-tag">Bedrooms</span>
+            <span class="preview-card-num">03</span>
+          </div>
+          <p class="preview-card-caption">Shot, edited, and in your inbox within 48 hours.</p>
+        </div>
+      </a>
+    </div>
+    <div class="preview-cta">
+      <a href="portfolio.html" class="btn-ghost">View Full Portfolio</a>
+    </div>
+  </section>
+
   <!-- PILLARS -->
   <section id="pillars">
     <div class="pillars-header reveal">
@@ -636,12 +778,12 @@
   <!-- FOOTER -->
   <footer>
     <a href="#" class="footer-logo">
-      <img src="logo-footer.png" alt="Powder River Media" style="height:50px; width:auto; opacity:0.85;" />
+      <img src="logo-nav.svg" alt="Powder River Media" style="height:96px; width:auto; opacity:0.9;" />
     </a>
     <div class="footer-right">
       <div class="footer-links">
         <a href="https://www.instagram.com/powderriver.media" target="_blank" rel="noopener">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@powderriver.media
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@powderriver.media
         </a>
         <a href="mailto:info@powderrivermedia.com">info@powderrivermedia.com</a>
         <a href="tel:2406542145">(240) 654-2145</a>
@@ -651,11 +793,8 @@
   </footer>
 
   <script>
-    // Hero background Ken Burns
+    // Parallax
     var heroBg = document.getElementById('hero-bg');
-    var heroImg = new Image();
-    heroImg.src = 'baltimore-real-estate-photography-living-room-coastal-natural-light.jpg';
-    heroImg.onload = function() { heroBg.classList.add('loaded'); };
 
     function dismissLoader() {
       var loader = document.getElementById('loader');
@@ -665,7 +804,9 @@
 
     var nav = document.getElementById('main-nav');
     window.addEventListener('scroll', function() {
-      nav.classList.toggle('scrolled', window.scrollY > 30);
+      var scrollY = window.scrollY;
+      nav.classList.toggle('scrolled', scrollY > 30);
+      heroBg.style.transform = 'translateY(' + (scrollY * 0.45) + 'px)';
     }, { passive: true });
   </script>
 </body>
