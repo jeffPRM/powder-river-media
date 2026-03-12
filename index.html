@@ -391,11 +391,11 @@
     .pillars-header { text-align: center; margin-bottom: 64px; }
     .pillars-header .section-eyebrow { color: rgba(201,184,130,.6); }
     .pillars-grid {
-      display: grid; grid-template-columns: repeat(3,1fr); gap: 3px;
-      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 3px;
+      max-width: 1300px; margin: 0 auto;
     }
     .pillar {
-      background: var(--dark); padding: 48px 40px 44px;
+      background: var(--dark); padding: 44px 32px 40px;
       border: 1px solid rgba(255,255,255,.05); position: relative;
       overflow: hidden; transition: border-color 0.4s;
     }
@@ -416,6 +416,47 @@
     .pillar-body {
       font-family: var(--fb); font-size: 14px; font-weight: 300;
       line-height: 1.75; color: rgba(250,250,248,.4);
+    }
+
+    /* AGENT BENEFITS */
+    #agent-benefits {
+      background: var(--bg);
+      padding: 100px 56px;
+      border-top: 1px solid var(--lt);
+    }
+    .benefits-inner { max-width: 1100px; margin: 0 auto; }
+    .benefits-header { text-align: center; margin-bottom: 64px; }
+    .benefits-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 24px;
+    }
+    .benefit-card {
+      background: var(--bg);
+      border: 1.5px solid var(--gold);
+      padding: 44px 36px 40px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.09);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .benefit-card:hover {
+      border-color: var(--aqua);
+      transform: translateY(-7px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.11), 0 0 36px rgba(58,191,191,0.18);
+    }
+    .benefit-icon { color: var(--aqua); margin-bottom: 22px; position: relative; z-index: 1; }
+    .benefit-title {
+      font-family: var(--cs); font-size: 22px; font-weight: 600;
+      letter-spacing: .04em; color: var(--dark); margin-bottom: 14px;
+      position: relative; z-index: 1;
+    }
+    .benefit-body {
+      font-family: var(--fb); font-size: 14px; font-weight: 400;
+      line-height: 1.8; color: var(--mid);
+      position: relative; z-index: 1;
+    }
+    @media (max-width: 860px) {
+      #agent-benefits { padding: 72px 24px; }
+      .benefits-grid { grid-template-columns: 1fr; gap: 16px; }
     }
 
     /* CONTACT */
@@ -544,7 +585,7 @@
       .hero-corner { display: none; }
       .about-inner { grid-template-columns: 1fr; gap: 48px; }
       #about { padding: 72px 24px; }
-      .pillars-grid { grid-template-columns: 1fr; }
+      .pillars-grid { grid-template-columns: repeat(2,1fr); }
       #pillars { padding: 72px 24px; }
       .services-inner { overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; justify-content: flex-start; width: 100%; max-width: 100%; }
       .svc-item { min-width: 120px; max-width: 120px; border-left: none !important; border-bottom: none; border-right: 1px solid var(--lt); flex-shrink: 0; padding: 28px 16px; background: var(--bgalt); }
@@ -583,6 +624,8 @@
     </a>
     <div class="nav-links">
       <a href="portfolio.html" class="nav-link">Portfolio</a>
+      <!-- TODO: Replace href with Spiro.media agent login URL when available -->
+      <a href="#" class="nav-link">Agent Portal</a>
       <a href="#contact" class="nav-cta">Book a Shoot</a>
     </div>
   </nav>
@@ -674,7 +717,7 @@
       <div class="reveal">
         <p class="section-eyebrow">About Powder River Media</p>
         <h2 class="section-title">Where <span class="aqua">craft</span> meets<br>the Maryland market.</h2>
-        <p class="about-body">Powder River Media was built on a single belief: every listing deserves imagery that does it justice. We combine technical precision with a genuine eye for light, space, and story — producing media assets that move listings, not just document them.</p>
+        <p class="about-body">Powder River Media was built on a single belief: every listing deserves imagery that does it justice. We combine technical precision with a genuine eye for light, space, and story — producing media that presents your listings at their best and your brand at its strongest.</p>
         <p class="about-body">Based in Baltimore, we serve agents, brokers, and sellers across Central Maryland. From intimate row homes to waterfront estates, every property is treated as a unique visual opportunity.</p>
       </div>
       <div class="reveal">
@@ -700,7 +743,6 @@
         </div>
         <div class="preview-card-body">
           <div class="preview-card-meta">
-            <span class="preview-card-tag">Kitchen &amp; Dining</span>
             <span class="preview-card-num">01</span>
           </div>
           <p class="preview-card-caption">True color, balanced exposure — no blown-out windows.</p>
@@ -713,10 +755,9 @@
         </div>
         <div class="preview-card-body">
           <div class="preview-card-meta">
-            <span class="preview-card-tag">Open-Plan Living</span>
             <span class="preview-card-num">02</span>
           </div>
-          <p class="preview-card-caption">Full-room perspective that shows buyers everything they need to see.</p>
+          <p class="preview-card-caption">Every detail considered — composition, light, and depth working together.</p>
         </div>
       </a>
       <a href="portfolio.html" class="preview-card">
@@ -726,10 +767,9 @@
         </div>
         <div class="preview-card-body">
           <div class="preview-card-meta">
-            <span class="preview-card-tag">Bedrooms</span>
             <span class="preview-card-num">03</span>
           </div>
-          <p class="preview-card-caption">Shot, edited, and in your inbox within 48 hours.</p>
+          <p class="preview-card-caption">Photos in your inbox within 24 hours — processed, color-corrected, MLS-ready.</p>
         </div>
       </a>
     </div>
@@ -748,17 +788,75 @@
       <div class="pillar reveal">
         <p class="pillar-num">01</p>
         <h3 class="pillar-title">Service First, Always</h3>
-        <p class="pillar-body">We show up prepared, communicate clearly, and deliver work that exceeds expectations every time. Our goal isn't just a great shoot — it's to be the photographer you call for every listing, without thinking twice.</p>
+        <p class="pillar-body">We show up prepared, communicate clearly, and deliver work that exceeds expectations every time. Our goal isn't just a great shoot — it's to be the media partner you call for every listing, without thinking twice.</p>
       </div>
       <div class="pillar reveal">
         <p class="pillar-num">02</p>
-        <h3 class="pillar-title">Speed You Can Count On</h3>
-        <p class="pillar-body">Listing timelines don't wait. Your media is delivered within 48 hours — processed, color-corrected, and MLS-ready the moment you need it.</p>
+        <h3 class="pillar-title">Exceptional Craft</h3>
+        <p class="pillar-body">Every listing deserves imagery that does it justice — and that imagery reflects directly on you. We bring technical precision and a genuine eye for light, space, and story to every shoot, from intimate row homes to waterfront estates.</p>
       </div>
       <div class="pillar reveal">
         <p class="pillar-num">03</p>
-        <h3 class="pillar-title">A Full Media Suite</h3>
-        <p class="pillar-body">Photography, video, drone, and floor plans — one vendor, one point of contact, one delivery. Less coordination for you, more consistency across every listing.</p>
+        <h3 class="pillar-title">Delivered on Time, Every Time</h3>
+        <p class="pillar-body">Listing timelines don't wait. Photos are delivered within 24 hours. Video, drone, and floor plans within 48 — processed, color-corrected, and MLS-ready the moment you need them.</p>
+      </div>
+      <div class="pillar reveal">
+        <p class="pillar-num">04</p>
+        <h3 class="pillar-title">Seamless Experience</h3>
+        <p class="pillar-body">One booking. One team. Photography, video, drone, floor plans, and more — delivered in one place, ready to post. No juggling vendors, no chasing files. Just a simple process and consistent results, every time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENT BENEFITS -->
+  <section id="agent-benefits">
+    <div class="benefits-inner">
+      <div class="benefits-header reveal">
+        <p class="section-eyebrow">For Agents</p>
+        <h2 class="section-title">Built around<br>your business.</h2>
+      </div>
+      <div class="benefits-grid">
+
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="16" rx="2"/>
+              <line x1="3" y1="9" x2="21" y2="9"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <polyline points="9 14 11 16 15 12"/>
+            </svg>
+          </div>
+          <h3 class="benefit-title">Pay at Close</h3>
+          <p class="benefit-body">Media costs don't have to hit before your commission does. Choose to pay on delivery or sync your payment with closing day — so your cash flow stays where you need it.</p>
+        </div>
+
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="8" r="3"/>
+              <path d="M3 21v-1a6 6 0 0 1 6-6h.5"/>
+              <circle cx="17" cy="11" r="2.5"/>
+              <path d="M13 21v-.5a4.5 4.5 0 0 1 4.5-4.5 4.5 4.5 0 0 1 4.5 4.5v.5"/>
+              <line x1="9" y1="15" x2="12" y2="13.5"/>
+            </svg>
+          </div>
+          <h3 class="benefit-title">Referral Rewards</h3>
+          <p class="benefit-body">Tell a fellow agent about Powder River Media and earn credit toward your next shoot. The more agents you send our way, the more you save. Good work is meant to be shared.</p>
+        </div>
+
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3 class="benefit-title">Amplify Your Brand</h3>
+          <p class="benefit-body">Quality media doesn't just sell the property — it markets you. Sellers choose agents who look the part, and consistent, professional listings are one of the strongest signals you can send. Every shoot is an opportunity to show sellers what working with you looks like.</p>
+        </div>
+
       </div>
     </div>
   </section>
