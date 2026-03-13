@@ -11,17 +11,26 @@
   <meta name="author" content="Powder River Media" />
   <link rel="canonical" href="https://powderrivermedia.com/" />
 
+  <!-- Geo / Local SEO -->
+  <meta name="geo.region" content="US-MD" />
+  <meta name="geo.placename" content="Baltimore, Maryland" />
+
   <!-- Open Graph (Facebook, LinkedIn) -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://powderrivermedia.com/" />
   <meta property="og:title" content="Powder River Media — Real Estate Photography & Video · Baltimore, MD" />
   <meta property="og:description" content="Professional real estate photography, video, drone, and floor plans serving Baltimore and Central Maryland. Fast turnaround, MLS-ready media." />
   <meta property="og:site_name" content="Powder River Media" />
+  <meta property="og:image" content="https://powderrivermedia.com/baltimore-real-estate-photography-living-room-coastal-natural-light.jpg" />
+  <meta property="og:image:width" content="1800" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Living room real estate photography by Powder River Media — Baltimore, MD" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Powder River Media — Real Estate Photography · Baltimore, MD" />
   <meta name="twitter:description" content="Professional real estate photography, video, drone, and floor plans serving Baltimore and Central Maryland." />
+  <meta name="twitter:image" content="https://powderrivermedia.com/baltimore-real-estate-photography-living-room-coastal-natural-light.jpg" />
 
   <!-- Local Business Schema -->
   <script type="application/ld+json">
@@ -29,32 +38,41 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Powder River Media",
-    "description": "Professional real estate photography, video, drone, and floor plans serving Baltimore and Central Maryland.",
+    "description": "Professional real estate photography, video, drone, floor plans, and 3D tours serving Baltimore and Central Maryland.",
     "url": "https://powderrivermedia.com",
     "telephone": "+12406542145",
     "email": "info@powderrivermedia.com",
+    "image": "https://powderrivermedia.com/baltimore-real-estate-photography-living-room-coastal-natural-light.jpg",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Baltimore",
       "addressRegion": "MD",
       "addressCountry": "US"
     },
-    "areaServed": {
-      "@type": "State",
-      "name": "Central Maryland"
-    },
+    "areaServed": [
+      { "@type": "City", "name": "Baltimore" },
+      { "@type": "AdministrativeArea", "name": "Central Maryland" }
+    ],
     "sameAs": [
       "https://www.instagram.com/powderriver.media"
     ],
     "priceRange": "$$",
-    "serviceType": ["Real Estate Photography", "Real Estate Video", "Drone Photography", "Floor Plans"]
+    "serviceType": [
+      "Real Estate Photography",
+      "Real Estate Video",
+      "Drone Photography",
+      "Floor Plans",
+      "3D Virtual Tours"
+    ]
   }
   </script>
 
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://powderrivermedia.17hats.com" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -326,6 +344,68 @@
     #about {
       background: var(--bg);
       padding: 112px 56px;
+    }
+
+    /* JEFF BIO BLOCK (homepage) */
+    #about-jeff {
+      background: var(--dark);
+      padding: 0;
+      border-top: 1px solid rgba(255,255,255,.05);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+    .jeff-bio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
+    }
+    .jeff-bio-photo {
+      position: relative;
+      overflow: hidden;
+    }
+    .jeff-bio-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .jeff-bio-photo-fade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent 50%, var(--dark));
+    }
+    .jeff-bio-content {
+      padding: 80px 72px 80px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      border-left: 3px solid var(--aqua);
+    }
+    .jeff-bio-stats {
+      display: flex;
+      gap: 40px;
+      margin: 28px 0;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .jeff-bio-stat-num {
+      font-family: var(--cs);
+      font-size: 44px;
+      font-weight: 600;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+    }
+    .jeff-bio-stat-label {
+      font-family: var(--fb);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(250,250,248,.35);
+      display: block;
+      margin-top: 6px;
     }
     .about-inner {
       max-width: 1100px; margin: 0 auto;
@@ -605,12 +685,16 @@
       .hero-corner { display: none; }
       .about-inner { grid-template-columns: 1fr; gap: 48px; }
       #about { padding: 72px 24px; }
+      .jeff-bio-grid { grid-template-columns: 1fr; }
+      .jeff-bio-photo { height: 340px; }
+      .jeff-bio-photo-fade { background: linear-gradient(to bottom, transparent 50%, var(--dark)); }
+      .jeff-bio-content { padding: 48px 24px; border-left: none; border-top: 3px solid var(--aqua); }
+      .jeff-bio-stats { gap: 24px; flex-wrap: wrap; }
       .pillars-grid { grid-template-columns: repeat(2,1fr); }
       #pillars { padding: 72px 24px; }
       .services-inner { overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; justify-content: flex-start; width: 100%; max-width: 100%; }
       .svc-item { min-width: 120px; max-width: 120px; border-left: none !important; border-bottom: none; border-right: 1px solid var(--lt); flex-shrink: 0; padding: 28px 16px; background: var(--bgalt); }
       #contact { padding: 72px 24px; }
-      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
       .form-row { grid-template-columns: 1fr; }
       .form-wrap { padding: 32px 24px; }
       footer { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
@@ -644,6 +728,7 @@
       <img src="logo-nav.svg" alt="Powder River Media" style="height:124px; width:auto;" />
     </a>
     <div class="nav-links">
+      <a href="about.html" class="nav-link">About</a>
       <a href="services.html" class="nav-link">Services</a>
       <a href="portfolio.html" class="nav-link">Portfolio</a>
       <!-- TODO: Replace href with Spiro.media agent login URL when available -->
@@ -763,13 +848,13 @@
   <!-- PORTFOLIO PREVIEW -->
   <section id="portfolio-preview">
     <div class="preview-header">
-      <p class="section-eyebrow">Our Work</p>
+      <p class="section-eyebrow">Work</p>
       <h2 class="section-title">Every listing,<br><span class="aqua">at its best.</span></h2>
     </div>
     <div class="preview-grid">
       <a href="portfolio.html" class="preview-card">
         <div class="preview-card-photo">
-          <img src="baltimore-real-estate-photography-kitchen-island-waterfront-view.jpg" alt="Open kitchen with island seating and waterfront views, real estate photography Baltimore MD" />
+          <img src="baltimore-real-estate-photography-kitchen-island-waterfront-view.jpg" alt="Open kitchen with island seating and waterfront views, real estate photography Baltimore MD" loading="lazy" />
           <div class="preview-card-photo-overlay"><span>View Portfolio &rarr;</span></div>
         </div>
         <div class="preview-card-body">
@@ -781,7 +866,7 @@
       </a>
       <a href="portfolio.html" class="preview-card">
         <div class="preview-card-photo">
-          <img src="baltimore-real-estate-photography-kitchen-navy-cabinets-open-plan.jpg" alt="Modern open-plan kitchen with navy cabinets and island, real estate photography Baltimore MD" />
+          <img src="baltimore-real-estate-photography-kitchen-navy-cabinets-open-plan.jpg" alt="Modern open-plan kitchen with navy cabinets and island, real estate photography Baltimore MD" loading="lazy" />
           <div class="preview-card-photo-overlay"><span>View Portfolio &rarr;</span></div>
         </div>
         <div class="preview-card-body">
@@ -793,7 +878,7 @@
       </a>
       <a href="portfolio.html" class="preview-card">
         <div class="preview-card-photo">
-          <img src="baltimore-real-estate-photography-primary-bedroom-blue-accent-decor.jpg" alt="Staged primary bedroom with blue accent decor, real estate photography Central Maryland" />
+          <img src="baltimore-real-estate-photography-primary-bedroom-blue-accent-decor.jpg" alt="Staged primary bedroom with blue accent decor, real estate photography Central Maryland" loading="lazy" />
           <div class="preview-card-photo-overlay"><span>View Portfolio &rarr;</span></div>
         </div>
         <div class="preview-card-body">
@@ -806,36 +891,6 @@
     </div>
     <div class="preview-cta">
       <a href="portfolio.html" class="btn-ghost">View Full Portfolio</a>
-    </div>
-  </section>
-
-  <!-- PILLARS -->
-  <section id="pillars">
-    <div class="pillars-header reveal">
-      <p class="section-eyebrow" style="color:rgba(201,184,130,.6)">Our Approach</p>
-      <h2 class="section-title" style="color:#FAFAF8">Built on service.<br>Built for the long run.</h2>
-    </div>
-    <div class="pillars-grid">
-      <div class="pillar reveal">
-        <p class="pillar-num">01</p>
-        <h3 class="pillar-title">Service First, Always</h3>
-        <p class="pillar-body">We show up prepared, communicate clearly, and deliver work that exceeds expectations every time. Our goal isn't just a great shoot — it's to be the media partner you call for every listing, without thinking twice.</p>
-      </div>
-      <div class="pillar reveal">
-        <p class="pillar-num">02</p>
-        <h3 class="pillar-title">Exceptional Craft</h3>
-        <p class="pillar-body">Every listing deserves imagery that does it justice — and that imagery reflects directly on you. We bring technical precision and a genuine eye for light, space, and story to every shoot, from intimate row homes to waterfront estates.</p>
-      </div>
-      <div class="pillar reveal">
-        <p class="pillar-num">03</p>
-        <h3 class="pillar-title">Delivered on Time, Every Time</h3>
-        <p class="pillar-body">Listing timelines don't wait. Photos are delivered within 24 hours. Video, drone, and floor plans within 48 — processed, color-corrected, and MLS-ready the moment you need them.</p>
-      </div>
-      <div class="pillar reveal">
-        <p class="pillar-num">04</p>
-        <h3 class="pillar-title">Seamless Experience</h3>
-        <p class="pillar-body">One booking. One team. Photography, video, drone, floor plans, and more — delivered in one place, ready to post. No juggling vendors, no chasing files. Just a simple process and consistent results, every time.</p>
-      </div>
     </div>
   </section>
 
@@ -886,7 +941,75 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- PILLARS -->
+  <section id="pillars">
+    <div class="pillars-header reveal">
+      <p class="section-eyebrow" style="color:rgba(201,184,130,.6)">Our Approach</p>
+      <h2 class="section-title" style="color:#FAFAF8">Built on service.<br>Built for the long run.</h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar reveal">
+        <p class="pillar-num">01</p>
+        <h3 class="pillar-title">Service First, Always</h3>
+        <p class="pillar-body">We show up prepared, communicate clearly, and deliver work that exceeds expectations every time. Our goal isn't just a great shoot — it's to be the media partner you call for every listing, without thinking twice.</p>
+      </div>
+      <div class="pillar reveal">
+        <p class="pillar-num">02</p>
+        <h3 class="pillar-title">Exceptional Craft</h3>
+        <p class="pillar-body">Every listing deserves imagery that does it justice — and that imagery reflects directly on you. We bring technical precision and a genuine eye for light, space, and story to every shoot, from intimate row homes to waterfront estates.</p>
+      </div>
+      <div class="pillar reveal">
+        <p class="pillar-num">03</p>
+        <h3 class="pillar-title">Delivered on Time, Every Time</h3>
+        <p class="pillar-body">Listing timelines don't wait. Photos are delivered within 24 hours. Video, drone, and floor plans within 48 — processed, color-corrected, and MLS-ready the moment you need them.</p>
+      </div>
+      <div class="pillar reveal">
+        <p class="pillar-num">04</p>
+        <h3 class="pillar-title">Seamless Experience</h3>
+        <p class="pillar-body">One booking. One team. Photography, video, drone, floor plans, and more — delivered in one place, ready to post. No juggling vendors, no chasing files. Just a simple process and consistent results, every time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT JEFF -->
+  <section id="about-jeff">
+    <div class="jeff-bio-grid">
+      <div class="jeff-bio-photo">
+        <picture>
+          <source srcset="jeff-sellenrick-powder-river-media.webp" type="image/webp" />
+          <img
+            src="jeff-sellenrick-powder-river-media.jpg"
+            alt="Jeff Sellenrick, Founder of Powder River Media — Baltimore Real Estate Photographer"
+            width="1400" height="1120"
+            loading="lazy"
+          />
+        </picture>
+        <div class="jeff-bio-photo-fade"></div>
+      </div>
+      <div class="jeff-bio-content reveal">
+        <h2 class="section-title" style="color:#FAFAF8">Jeff Sellenrick</h2>
+        <div class="jeff-bio-stats">
+          <div>
+            <span class="jeff-bio-stat-num">14+</span>
+            <span class="jeff-bio-stat-label">Years behind the lens</span>
+          </div>
+          <div>
+            <span class="jeff-bio-stat-num">2012</span>
+            <span class="jeff-bio-stat-label">Photography since</span>
+          </div>
+          <div>
+            <span class="jeff-bio-stat-num">Balt.</span>
+            <span class="jeff-bio-stat-label">Based in Baltimore</span>
+          </div>
+        </div>
+        <p class="about-body" style="color:rgba(250,250,248,.55);">Jeff Sellenrick has been behind the camera since 2012 — photographing weddings, portraits and headshots where getting it right wasn't optional. That same standard is what he brings to every listing.</p>
+        <p class="about-body" style="color:rgba(250,250,248,.55); margin-top:14px;">He started Powder River Media to build something specific: the real estate media company that agents in Baltimore and Central Maryland come back to, listing after listing, and send their colleagues to without hesitation.</p>
+        <a href="about.html" style="display:inline-block;margin-top:28px;font-family:var(--fb);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,184,130,0.3);padding-bottom:3px;transition:color 0.25s,border-color 0.25s;" onmouseover="this.style.color='var(--aqua)';this.style.borderColor='rgba(58,191,191,0.4)'" onmouseout="this.style.color='var(--gold)';this.style.borderColor='rgba(201,184,130,0.3)'">About Jeff &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+<!-- CONTACT -->
   <section id="contact">
     <div class="contact-inner">
       <div class="contact-left">
@@ -902,12 +1025,12 @@
 
   <!-- FOOTER -->
   <footer>
-    <a href="#" class="footer-logo">
+    <a href="index.html" class="footer-logo">
       <img src="logo-nav.svg" alt="Powder River Media" style="height:96px; width:auto; opacity:0.9;" />
     </a>
     <div class="footer-right">
       <div class="footer-links">
-        <a href="https://www.instagram.com/powderriver.media" target="_blank" rel="noopener">
+        <a href="https://www.instagram.com/powderriver.media" target="_blank" rel="noopener noreferrer">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@powderriver.media
         </a>
         <a href="mailto:info@powderrivermedia.com">info@powderrivermedia.com</a>
