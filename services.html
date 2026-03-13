@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Powder River Media | Real Estate Photography Baltimore</title>
+  <meta name="description" content="Professional real estate photography, video tours, drone, floor plans, and 3D tours for agents and brokers across Baltimore and Central Maryland. Photos delivered in 24 hours." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --ink:   #1C1C1C;
+      --mid:   #5A5A5A;
+      --lt:    #E8E6E1;
+      --bg:    #FAFAF8;
+      --bgalt: #F2F0EB;
+      --gold:  #C9B882;
+      --gold-l:#ddd0a8;
+      --aqua:  #3ABFBF;
+      --dark:  #1D2B2E;
+      --cs:    'Cormorant SC', Georgia, serif;
+      --fb:    'DM Sans', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--fb);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 56px;
+      background: rgba(29,43,46,0.97);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(201,184,130,0.12);
+      transition: all 0.4s;
+    }
+    .nav-logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-link {
+      font-family: var(--fb); font-size: 11px; font-weight: 500;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: rgba(250,250,248,.85); text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav-link:hover { color: var(--gold); }
+    .nav-link.active { color: var(--gold); }
+    .nav-cta {
+      font-family: var(--fb); font-size: 11px; font-weight: 500;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(201,184,130,0.4); padding: 10px 24px;
+      transition: all 0.4s;
+    }
+    .nav-cta:hover { color: var(--aqua); border-color: var(--aqua); }
+    @media (max-width: 860px) {
+      nav { padding: 14px 20px; }
+      .nav-link { font-size: 10px; letter-spacing: .12em; }
+      .nav-cta { padding: 8px 14px; font-size: 10px; white-space: nowrap; }
+    }
+
+    /* PAGE BANNER */
+    #page-banner {
+      background: var(--dark);
+      padding: 140px 56px 96px;
+      text-align: center;
+      position: relative;
+    }
+    #page-banner::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold) 25%, var(--gold) 75%, transparent);
+      opacity: .2;
+    }
+    .banner-eyebrow {
+      font-family: var(--fb); font-size: 10px; font-weight: 600;
+      letter-spacing: .28em; text-transform: uppercase; color: rgba(201,184,130,.7);
+      margin-bottom: 20px;
+    }
+    .banner-title {
+      font-family: var(--cs); font-size: clamp(40px, 5vw, 68px); font-weight: 600;
+      letter-spacing: .05em; line-height: 1.1; color: #FAFAF8;
+      margin-bottom: 24px;
+    }
+    .banner-sub {
+      font-family: var(--fb); font-size: 16px; font-weight: 300;
+      line-height: 1.75; color: rgba(250,250,248,.5);
+      max-width: 540px; margin: 0 auto;
+    }
+
+    /* SERVICE STRIP */
+    #service-strip {
+      background: var(--bgalt);
+      border-bottom: 1px solid var(--lt);
+    }
+    .strip-inner {
+      display: flex; justify-content: center; max-width: 1080px; margin: 0 auto;
+    }
+    .svc-item {
+      display: flex; flex-direction: column; align-items: center; gap: 11px;
+      padding: 36px 44px; border-right: 1px solid var(--lt); flex: 1;
+      min-width: 130px; transition: background 0.25s; text-decoration: none;
+    }
+    .svc-item:first-child { border-left: 1px solid var(--lt); }
+    .svc-item:hover { background: var(--bg); }
+    .svc-item:hover .svc-icon { color: var(--aqua); filter: drop-shadow(0 0 6px rgba(58,191,191,0.4)); }
+    .svc-item:hover .svc-name { color: var(--aqua); }
+    .svc-icon { color: var(--gold); transition: color 0.3s; }
+    .svc-name {
+      font-family: var(--fb); font-size: 10px; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase; color: var(--mid);
+      transition: color 0.3s;
+    }
+
+    /* SERVICES LIST */
+    #services-list { padding: 100px 56px; }
+    .services-list-inner { max-width: 1100px; margin: 0 auto; }
+
+    .service-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--lt);
+      padding: 72px 0;
+    }
+    .service-block:last-child { border-bottom: 1px solid var(--lt); }
+
+    .service-left { padding-right: 80px; }
+    .service-num {
+      font-family: var(--fb); font-size: 10px; font-weight: 600;
+      letter-spacing: .22em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 18px; display: block;
+    }
+    .service-title {
+      font-family: var(--cs); font-size: clamp(28px, 3vw, 42px); font-weight: 600;
+      letter-spacing: .04em; line-height: 1.15; color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .service-tagline {
+      font-family: var(--fb); font-size: 15px; font-weight: 400;
+      line-height: 1.7; color: var(--mid); margin-bottom: 0;
+    }
+
+    .service-right { padding-top: 4px; }
+    .service-body {
+      font-family: var(--fb); font-size: 15px; font-weight: 300;
+      line-height: 1.85; color: var(--mid); margin-bottom: 32px;
+    }
+    .service-delivery {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--dark); padding: 14px 20px;
+      border-left: 3px solid var(--aqua);
+    }
+    .service-delivery-label {
+      font-family: var(--fb); font-size: 10px; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase; color: rgba(250,250,248,.4);
+    }
+    .service-delivery-value {
+      font-family: var(--fb); font-size: 13px; font-weight: 500;
+      letter-spacing: .04em; color: #FAFAF8;
+    }
+    .service-includes {
+      margin-top: 24px;
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .service-tag {
+      font-family: var(--fb); font-size: 10px; font-weight: 500;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--mid); border: 1px solid var(--lt);
+      padding: 6px 12px; background: var(--bgalt);
+    }
+
+    /* CTA BLOCK */
+    #cta-block {
+      background: var(--dark);
+      padding: 100px 56px;
+      text-align: center;
+      position: relative;
+    }
+    #cta-block::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold) 25%, var(--gold) 75%, transparent);
+      opacity: .2;
+    }
+    .cta-eyebrow {
+      font-family: var(--fb); font-size: 10px; font-weight: 600;
+      letter-spacing: .28em; text-transform: uppercase; color: rgba(201,184,130,.7);
+      margin-bottom: 20px;
+    }
+    .cta-title {
+      font-family: var(--cs); font-size: clamp(34px, 4vw, 56px); font-weight: 600;
+      letter-spacing: .04em; line-height: 1.15; color: #FAFAF8;
+      margin-bottom: 20px;
+    }
+    .cta-sub {
+      font-family: var(--fb); font-size: 16px; font-weight: 300;
+      line-height: 1.75; color: rgba(250,250,248,.5);
+      max-width: 500px; margin: 0 auto 48px;
+    }
+    .btn-primary {
+      display: inline-block; background: var(--gold); color: var(--dark);
+      text-decoration: none; font-family: var(--fb); font-size: 11px; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase; padding: 17px 48px; transition: all 0.3s;
+    }
+    .btn-primary:hover { background: var(--gold-l); transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark); border-top: 1px solid rgba(255,255,255,.07);
+      padding: 52px 56px; display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 28px;
+    }
+    .footer-logo { display: inline-flex; align-items: center; text-decoration: none; }
+    .footer-right { text-align: right; }
+    .footer-links { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
+    .footer-links a { font-family: var(--fb); font-size: 13px; font-weight: 300; color: var(--gold); text-decoration: none; transition: color 0.25s; }
+    .footer-links a:hover { color: var(--aqua); }
+    .footer-legal { font-family: var(--fb); font-size: 11px; letter-spacing: .06em; color: rgba(255,255,255,.18); margin-top: 10px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      #page-banner { padding: 120px 24px 72px; }
+      #service-strip { display: none; }
+      #services-list { padding: 64px 24px; }
+      .service-block { grid-template-columns: 1fr; gap: 32px; padding: 52px 0; }
+      .service-left { padding-right: 0; }
+      #cta-block { padding: 72px 24px; }
+      footer { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
+      .footer-right { text-align: left; }
+      .footer-links { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">
+      <img src="logo-nav.svg" alt="Powder River Media" style="height:124px; width:auto;" />
+    </a>
+    <div class="nav-links">
+      <a href="services.html" class="nav-link active">Services</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+      <!-- TODO: Replace href with Spiro.media agent login URL when available -->
+      <a href="#" class="nav-link">Agent Portal</a>
+      <a href="contact.html" class="nav-cta">Book a Shoot</a>
+    </div>
+  </nav>
+
+  <!-- PAGE BANNER -->
+  <section id="page-banner">
+    <p class="banner-eyebrow">What We Offer</p>
+    <h1 class="banner-title">Our Services</h1>
+    <p class="banner-sub">A full suite of listing media from one team — delivered fast, polished, and MLS-ready.</p>
+  </section>
+
+  <!-- SERVICE STRIP -->
+  <div id="service-strip">
+    <div class="strip-inner">
+      <a href="#photography" class="svc-item">
+        <svg class="svc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+          <circle cx="12" cy="13" r="4"/>
+        </svg>
+        <span class="svc-name">Photography</span>
+      </a>
+      <a href="#video" class="svc-item">
+        <svg class="svc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="23 7 16 12 23 17 23 7"/>
+          <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+        </svg>
+        <span class="svc-name">Video Tours</span>
+      </a>
+      <a href="#drone" class="svc-item">
+        <svg class="svc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <ellipse cx="12" cy="10" rx="3.5" ry="2.5"/>
+          <line x1="8.5" y1="9" x2="4" y2="7"/><line x1="15.5" y1="9" x2="20" y2="7"/>
+          <path d="M2 6.5 Q4 5.5 6 6.5"/><path d="M2 7.5 Q4 8.5 6 7.5"/>
+          <path d="M18 6.5 Q20 5.5 22 6.5"/><path d="M18 7.5 Q20 8.5 22 7.5"/>
+          <line x1="9.5" y1="12" x2="8" y2="16"/><line x1="14.5" y1="12" x2="16" y2="16"/>
+          <line x1="7" y1="16" x2="10" y2="16"/><line x1="14" y1="16" x2="17" y2="16"/>
+          <rect x="10.5" y="12.5" width="3" height="2.5" rx="0.5"/><circle cx="12" cy="13.75" r="0.7"/>
+        </svg>
+        <span class="svc-name">Drone</span>
+      </a>
+      <a href="#floor-plans" class="svc-item">
+        <svg class="svc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="2,4 2,20 15,20 15,16 20,16 20,4 2,4"/>
+          <line x1="11" y1="4" x2="11" y2="13"/>
+          <line x1="11" y1="10" x2="20" y2="10"/>
+          <line x1="5" y1="20" x2="8" y2="20"/>
+          <line x1="15" y1="13" x2="15" y2="16"/>
+        </svg>
+        <span class="svc-name">Floor Plans</span>
+      </a>
+      <a href="#3d-tours" class="svc-item">
+        <svg class="svc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="12,2 20,7 20,17 12,22 4,17 4,7 12,2"/>
+          <line x1="12" y1="2" x2="12" y2="22"/>
+          <line x1="4" y1="7" x2="20" y2="7"/>
+        </svg>
+        <span class="svc-name">3D Tours</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- SERVICES LIST -->
+  <section id="services-list">
+    <div class="services-list-inner">
+
+      <!-- Photography -->
+      <div class="service-block" id="photography">
+        <div class="service-left">
+          <span class="service-num">01</span>
+          <h2 class="service-title">Photography</h2>
+          <p class="service-tagline">Your listing gets one chance to make a first impression. Make it count.</p>
+        </div>
+        <div class="service-right">
+          <p class="service-body">Professional listing photography captures the light, space, and character of every property — from Baltimore row homes to waterfront estates. Every room is approached with intention: composition, natural light, and balance that shows buyers what the space actually looks and feels like. Images are processed, color-corrected, and delivered MLS-ready. No blown-out windows, no flat ambient light — just clean, accurate imagery that reflects well on you and the listing.</p>
+          <div class="service-delivery">
+            <span class="service-delivery-label">Delivered</span>
+            <span class="service-delivery-value">Within 24 hours</span>
+          </div>
+          <div class="service-includes">
+            <span class="service-tag">Color-corrected</span>
+            <span class="service-tag">MLS-ready</span>
+            <span class="service-tag">Full resolution</span>
+            <span class="service-tag">Web-optimized</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Tours -->
+      <div class="service-block" id="video">
+        <div class="service-left">
+          <span class="service-num">02</span>
+          <h2 class="service-title">Video Tours</h2>
+          <p class="service-tagline">Give buyers a feel for the property before they ever walk through the door.</p>
+        </div>
+        <div class="service-right">
+          <p class="service-body">A well-produced video tour does what photography can't — it shows flow, scale, and the experience of moving through a space. Buyers who've watched a video arrive with context. They already know the layout, the light, the feel of the home. Produced clean and delivered ready to post on MLS, your website, and social media. No heavy-handed music or cinematic over-production — just clear, professional footage that serves the listing.</p>
+          <div class="service-delivery">
+            <span class="service-delivery-label">Delivered</span>
+            <span class="service-delivery-value">Within 48 hours</span>
+          </div>
+          <div class="service-includes">
+            <span class="service-tag">Edited</span>
+            <span class="service-tag">Color-graded</span>
+            <span class="service-tag">MLS-compatible</span>
+            <span class="service-tag">Social-ready</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drone -->
+      <div class="service-block" id="drone">
+        <div class="service-left">
+          <span class="service-num">03</span>
+          <h2 class="service-title">Drone</h2>
+          <p class="service-tagline">Show the property in context. Lot, location, and surroundings — in one shot.</p>
+        </div>
+        <div class="service-right">
+          <p class="service-body">Aerial photography and video place a listing in its full context — the lot size, the neighborhood, the proximity to water, parks, and major roads. Particularly effective for larger properties, waterfront listings, corner lots, and homes where the outdoor space or location is a meaningful part of the value. FAA-certified operations. Imagery processed and delivered alongside the rest of your media package.</p>
+          <div class="service-delivery">
+            <span class="service-delivery-label">Delivered</span>
+            <span class="service-delivery-value">Within 48 hours</span>
+          </div>
+          <div class="service-includes">
+            <span class="service-tag">FAA-certified</span>
+            <span class="service-tag">Photo + video</span>
+            <span class="service-tag">Color-corrected</span>
+            <span class="service-tag">MLS-ready</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floor Plans -->
+      <div class="service-block" id="floor-plans">
+        <div class="service-left">
+          <span class="service-num">04</span>
+          <h2 class="service-title">Floor Plans</h2>
+          <p class="service-tagline">Buyers who understand the layout stay engaged longer.</p>
+        </div>
+        <div class="service-right">
+          <p class="service-body">Accurate, professionally drawn floor plans help buyers visualize how a space actually lives — where the rooms connect, how traffic flows, whether the layout works for their needs. Increasingly expected in competitive listings, floor plans reduce questions, increase time-on-listing, and give your marketing a level of detail that sets it apart. Available as a standalone service or added to any media package. Formatted for MLS and digital marketing.</p>
+          <div class="service-delivery">
+            <span class="service-delivery-label">Delivered</span>
+            <span class="service-delivery-value">Within 48 hours</span>
+          </div>
+          <div class="service-includes">
+            <span class="service-tag">Dimensioned</span>
+            <span class="service-tag">MLS-formatted</span>
+            <span class="service-tag">Digital-ready</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Tours -->
+      <div class="service-block" id="3d-tours">
+        <div class="service-left">
+          <span class="service-num">05</span>
+          <h2 class="service-title">3D Tours</h2>
+          <p class="service-tagline">Let buyers explore on their own schedule, from anywhere.</p>
+        </div>
+        <div class="service-right">
+          <p class="service-body">Interactive 3D tours give buyers the ability to walk through a property at their own pace — from any device, at any hour. An effective tool for reaching out-of-area buyers and for pre-qualifying in-person visits: buyers who've already toured the home virtually arrive ready to decide, not explore. An increasingly expected feature in today's market, and one of the most practical ways to extend the reach of your listing beyond open house hours.</p>
+          <div class="service-delivery">
+            <span class="service-delivery-label">Delivered</span>
+            <span class="service-delivery-value">Within 48 hours</span>
+          </div>
+          <div class="service-includes">
+            <span class="service-tag">Interactive</span>
+            <span class="service-tag">Any device</span>
+            <span class="service-tag">Shareable link</span>
+            <span class="service-tag">MLS-embeddable</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA BLOCK -->
+  <section id="cta-block">
+    <p class="cta-eyebrow">Ready to Get Started</p>
+    <h2 class="cta-title">Book your next shoot.</h2>
+    <p class="cta-sub">One booking. One team. Everything your listing needs, delivered together and ready to post.</p>
+    <a href="contact.html" class="btn-primary">Book a Shoot</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="index.html" class="footer-logo">
+      <img src="logo-nav.svg" alt="Powder River Media" style="height:96px; width:auto; opacity:0.9;" />
+    </a>
+    <div class="footer-right">
+      <div class="footer-links">
+        <a href="https://www.instagram.com/powderriver.media" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@powderriver.media
+        </a>
+        <a href="mailto:info@powderrivermedia.com">info@powderrivermedia.com</a>
+        <a href="tel:2406542145">(240) 654-2145</a>
+      </div>
+      <div class="footer-legal">© 2026 Powder River Media. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

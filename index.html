@@ -443,7 +443,7 @@
       transform: translateY(-7px);
       box-shadow: 0 16px 48px rgba(0,0,0,0.11), 0 0 36px rgba(58,191,191,0.18);
     }
-    .benefit-icon { color: var(--aqua); margin-bottom: 22px; position: relative; z-index: 1; }
+    .benefit-icon { color: var(--gold); margin-bottom: 22px; position: relative; z-index: 1; }
     .benefit-title {
       font-family: var(--cs); font-size: 22px; font-weight: 600;
       letter-spacing: .04em; color: var(--dark); margin-bottom: 14px;
@@ -460,14 +460,17 @@
     }
 
     /* CONTACT */
-    #contact { padding: 112px 56px; max-width: 780px; margin: 0 auto; text-align: center; }
+    #contact { padding: 112px 56px; max-width: 1200px; margin: 0 auto; }
+    .contact-inner {
+      display: grid; grid-template-columns: 1fr 52%; gap: 80px; align-items: start;
+    }
     .contact-title {
-      font-family: var(--cs); font-size: clamp(34px, 4vw, 54px); font-weight: 600;
+      font-family: var(--cs); font-size: clamp(34px, 3.5vw, 52px); font-weight: 600;
       letter-spacing: .04em; line-height: 1.2; color: var(--ink); margin-bottom: 18px;
     }
     .contact-sub {
-      font-family: var(--fb); font-size: 16px; font-weight: 300;
-      line-height: 1.75; color: var(--mid); margin-bottom: 52px;
+      font-family: var(--fb); font-size: 15px; font-weight: 300;
+      line-height: 1.75; color: var(--mid); margin-bottom: 0;
     }
     .form-wrap {
       background: var(--bg); border: 1px solid var(--lt);
@@ -524,9 +527,26 @@
       position: fixed; inset: 0; z-index: 9999;
       background: var(--dark);
       display: flex; flex-direction: column; align-items: center; justify-content: center;
-      transition: opacity 0.8s ease, visibility 0.8s ease;
     }
-    #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    #loader::before {
+      content: '';
+      position: absolute; top: 0; right: 0; bottom: 0;
+      width: 3px;
+      background: var(--aqua);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    #loader.hidden {
+      animation: loaderExit 2.16s ease-in forwards;
+      pointer-events: none;
+    }
+    #loader.hidden::before { opacity: 1; }
+    @keyframes loaderExit {
+      0%   { transform: translate(0, 0);         opacity: 1; }
+      28%  { transform: translate(26vw, -20px);  opacity: 0.9; }
+      62%  { transform: translate(66vw,  20px);  opacity: 0.5; }
+      100% { transform: translate(110vw, 0);     opacity: 0;   }
+    }
 
     #loader-icon {
       display: block;
@@ -590,6 +610,7 @@
       .services-inner { overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; justify-content: flex-start; width: 100%; max-width: 100%; }
       .svc-item { min-width: 120px; max-width: 120px; border-left: none !important; border-bottom: none; border-right: 1px solid var(--lt); flex-shrink: 0; padding: 28px 16px; background: var(--bgalt); }
       #contact { padding: 72px 24px; }
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
       .form-row { grid-template-columns: 1fr; }
       .form-wrap { padding: 32px 24px; }
       footer { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
@@ -623,10 +644,11 @@
       <img src="logo-nav.svg" alt="Powder River Media" style="height:124px; width:auto;" />
     </a>
     <div class="nav-links">
+      <a href="services.html" class="nav-link">Services</a>
       <a href="portfolio.html" class="nav-link">Portfolio</a>
       <!-- TODO: Replace href with Spiro.media agent login URL when available -->
       <a href="#" class="nav-link">Agent Portal</a>
-      <a href="#contact" class="nav-cta">Book a Shoot</a>
+      <a href="contact.html" class="nav-cta">Book a Shoot</a>
     </div>
   </nav>
 
@@ -707,6 +729,15 @@
           <line x1="15" y1="13" x2="15" y2="16"/>
         </svg>
         <span class="svc-name">Floor Plans</span>
+      </div>
+      <div class="svc-item">
+        <svg class="svc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <!-- 3D cube -->
+          <polyline points="12,2 20,7 20,17 12,22 4,17 4,7 12,2"/>
+          <line x1="12" y1="2" x2="12" y2="22"/>
+          <line x1="4" y1="7" x2="20" y2="7"/>
+        </svg>
+        <span class="svc-name">3D Tours</span>
       </div>
     </div>
   </section>
@@ -813,18 +844,14 @@
     <div class="benefits-inner">
       <div class="benefits-header reveal">
         <p class="section-eyebrow">For Agents</p>
-        <h2 class="section-title">Built around<br>your business.</h2>
+        <h2 class="section-title">Designed to help<br>you succeed.</h2>
       </div>
       <div class="benefits-grid">
 
         <div class="benefit-card reveal">
           <div class="benefit-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="4" width="18" height="16" rx="2"/>
-              <line x1="3" y1="9" x2="21" y2="9"/>
-              <line x1="8" y1="2" x2="8" y2="6"/>
-              <line x1="16" y1="2" x2="16" y2="6"/>
-              <polyline points="9 14 11 16 15 12"/>
+            <svg width="28" height="28" viewBox="0 0 122.88 105.47" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M74.74,64.24H75c9.78-.24,17.84,3,27,3.84,4.55.44,10.41.24,20.88-1.34C121.64,74.28,108.43,80,93.29,78.24c3.66,2.31,8.37,3.49,14.42,3.19-4.85,7.71-13.86,9-28.72,2.9,2.34,2.64,5.77,4.69,10.92,6-9.63,9.09-18.8-1-28.88-2.33L74.74,64.24ZM84,39.92,46.13,105.47,12,85.8,49.89,20.25,84,39.92ZM58,68.65a11.58,11.58,0,1,1-4.24-15.82A11.57,11.57,0,0,1,58,68.65ZM72.45,47.88,47.29,91.46a5.83,5.83,0,0,0-7.94,2.13L25.88,85.81a5.83,5.83,0,0,0-2.13-7.94L48.91,34.29a5.83,5.83,0,0,0,7.94-2.13l13.48,7.78a5.82,5.82,0,0,0,2.12,7.94ZM33.26,40.72,33,40.2c-4.68-8.59-11.48-14-16.81-21.44C13.5,15,10.75,9.86,6.89,0,1,4.85,2.66,19.13,11.71,31.38c-3.83-2-7.2-5.5-10-10.9C-2.51,28.55.89,37,13.59,46.81c-3.46-.71-6.95-2.65-10.65-6.46-3.08,13,10.51,15.85,16.63,24.08L33.26,40.72Z"/>
             </svg>
           </div>
           <h3 class="benefit-title">Pay at Close</h3>
@@ -841,16 +868,14 @@
               <line x1="9" y1="15" x2="12" y2="13.5"/>
             </svg>
           </div>
-          <h3 class="benefit-title">Referral Rewards</h3>
-          <p class="benefit-body">Tell a fellow agent about Powder River Media and earn credit toward your next shoot. The more agents you send our way, the more you save. Good work is meant to be shared.</p>
+          <h3 class="benefit-title">Referral Partnership</h3>
+          <p class="benefit-body">Refer a fellow agent to Powder River Media and receive credit toward your next listing. A benefit that grows with every introduction you make.</p>
         </div>
 
         <div class="benefit-card reveal">
           <div class="benefit-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-              <path d="M2 17l10 5 10-5"/>
-              <path d="M2 12l10 5 10-5"/>
+            <svg width="28" height="28" viewBox="0 0 123.52 113.54" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M82.33,16.91c-1.07,0.88-2.65,0.74-3.54-0.34s-0.74-2.65,0.34-3.54L94.2,0.58c1.07-0.88,2.65-0.74,3.54,0.33 c0.88,1.07,0.74,2.65-0.34,3.54L82.33,16.91L82.33,16.91L82.33,16.91z M9.12,60.78c-1.66,0.49-2.88,1.57-3.69,3 c-0.93,1.65-1.35,3.78-1.32,6.06c0.01,0.98,0.11,1.99,0.28,3.01c0.17,1.03,0.43,2.06,0.75,3.07c0.33,1.02,0.73,2.01,1.2,2.96 c0.46,0.92,0.98,1.8,1.55,2.6l0,0c1.4,1.95,3.14,3.5,5.15,4.28c1.75,0.69,3.72,0.79,5.84,0.06l0.04-0.01 c0.24-0.08,0.48-0.11,0.72-0.09c0.17,0.01,0.34,0.04,0.51,0.09l0.05-0.02c0.57-0.19,1.16-0.37,1.74-0.55l1.59-0.49 c0.58-0.17,1.13-0.33,1.65-0.48c0.51-0.15,1.03-0.29,1.56-0.43c0.55-0.15,1.1-0.06,1.56,0.2l0.05,0.03 c0.43,0.26,0.76,0.68,0.91,1.21c0.03,0.09,0.04,0.16,0.05,0.24c0.14,0.63,0.31,1.28,0.43,1.91c1.09,4.88,2.15,9.58,3.56,13.39 c0.12,0.38,0.27,0.75,0.41,1.13c0.43,1.2,0.88,2.44,1.38,3.57c0.48,1.1,0.99,2.08,1.57,2.8l0,0.01c0.43,0.54,0.93,0.88,1.52,0.91 c0.65,0.03,1.46-0.28,2.48-1.07c0.44-0.41,0.84-0.76,1.25-1.11l0.09-0.08c1.2-1.04,2.4-2.07,2.92-3.48 c-0.08-0.06-0.17-0.12-0.27-0.17c-0.23-0.13-0.52-0.26-0.81-0.38l-0.03-0.01c-1.07-0.45-2.13-0.91-2.9-1.87 c-0.78-0.97-1.2-2.38-0.91-4.68c0.01-0.14,0.03-0.26,0.05-0.38c0.02-0.14,0.04-0.28,0.05-0.42c0.13-1.04,0.2-1.58,0.16-1.73l0-0.02 c-0.03-0.04-0.24-0.19-0.66-0.58c-0.12-0.11-0.25-0.22-0.36-0.34c-0.62-0.58-1.06-1.27-1.34-2.03c-0.31-0.84-0.43-1.76-0.42-2.72 c0.01-0.94,0.15-1.92,0.36-2.85c0.26-1.13,0.63-2.21,1-3.1l0.02-0.03c0.14-0.33,0.36-0.6,0.62-0.8c0.28-0.22,0.62-0.36,0.97-0.41 l0.02,0c7.57-1.05,13.68-0.91,18.81-0.25c4.63,0.6,8.44,1.61,11.83,2.57c-2.59-2.95-4.97-6.42-7.12-10.2 c-2.77-4.88-5.15-10.29-7.07-15.77c-1.94-5.54-3.41-11.16-4.33-16.4c-0.77-4.4-1.16-8.54-1.11-12.13 c-2.89,4.15-6.78,9.19-12.5,14.27c-6.53,5.79-15.45,11.63-28.01,16.25c-0.13,0.04-0.26,0.09-0.39,0.13l-0.06,0.1 c0,0,0.01-0.01-0.22,0.35l-0.02,0.03c-0.13,0.2-0.29,0.37-0.47,0.51l0,0c-0.2,0.15-0.42,0.27-0.66,0.34L9.12,60.78L9.12,60.78z M66.17,68.52c1.88,3.61,3.96,6.97,6.21,9.88c2.14,2.76,4.44,5.13,6.86,6.92l0.25,0.02c0.12,0.01,0.24,0.01,0.34,0l0.04,0 c0.19-0.01,0.38-0.04,0.58-0.1c0.19-0.06,0.39-0.15,0.6-0.27c0.51-0.52,0.93-1.2,1.27-2c0.38-0.88,0.66-1.92,0.84-3.08 c0.55-3.43,0.29-7.82-0.56-12.67c-0.93-5.3-2.58-11.13-4.66-16.84c-2.04-5.61-4.5-11.09-7.12-15.83 c-2.49-4.52-5.12-8.36-7.66-10.99c-0.95-0.99-1.87-1.78-2.74-2.35c-0.81-0.53-1.56-0.87-2.25-0.98l-0.02,0 c-0.16-0.03-0.29-0.04-0.39-0.05c-0.04,0,0-0.03-0.02-0.02l0,0c-0.01,0-0.01,0.02-0.06,0.06c-0.09,0.08-0.22,0.2-0.37,0.35 c-0.13,0.12-0.26,0.27-0.38,0.41l-0.04,0.08c-1.16,2.4-1.56,6.2-1.31,10.83c0.26,4.7,1.2,10.23,2.73,15.97 c4.35-1,7.75-0.08,10.09,1.87c1.37,1.14,2.36,2.62,2.97,4.27c0.6,1.64,0.82,3.45,0.64,5.26C71.67,62.82,69.76,66.34,66.17,68.52 L66.17,68.52z M78.89,89.41c-0.2,0.03-0.4,0.03-0.6,0c-0.19-0.03-0.38-0.08-0.56-0.17c-0.27-0.05-0.54-0.1-0.8-0.16 c-1.89-0.39-3.73-0.92-5.71-1.48l-0.13-0.04c-6.79-1.93-15.28-4.35-28.88-2.67c-0.18,0.52-0.33,1.08-0.45,1.63 c-0.12,0.58-0.19,1.16-0.2,1.69c0,0.42,0.04,0.81,0.13,1.13c0.07,0.24,0.18,0.44,0.33,0.58l0.24,0.22 c1.11,1.01,1.65,1.51,1.96,2.65c0.25,0.92,0.14,1.77-0.08,3.45c-0.03,0.23-0.05,0.46-0.09,0.69c-0.1,0.81,0.03,1.28,0.27,1.57 c0.25,0.3,0.68,0.49,1.12,0.67l0.05,0.02c1.4,0.6,2.8,1.21,3.52,3.2c0.08,0.18,0.13,0.38,0.15,0.58c0.02,0.2,0.02,0.4-0.02,0.61 l0,0.01c-0.31,1.61-0.97,2.84-1.8,3.89c-0.81,1.03-1.77,1.85-2.72,2.67l-0.22,0.19c-0.33,0.28-0.65,0.56-0.96,0.86l-0.16,0.14 c-2.17,1.73-4.02,2.35-5.65,2.18c-1.65-0.17-3.02-1.15-4.18-2.61c-0.8-1-1.46-2.23-2.05-3.54c-0.58-1.3-1.08-2.67-1.56-4 c-0.13-0.37-0.27-0.74-0.41-1.11c-1.48-3.99-2.57-8.84-3.69-13.85c-0.36,0.1-0.72,0.22-1.08,0.32c-0.56,0.17-1.11,0.33-1.64,0.5 c-0.54,0.17-1.07,0.34-1.59,0.5l-0.03,0.01c-0.08,0.02-0.14,0.05-0.19,0.07l-0.03,0.01c-0.38,0.16-0.66,0.27-0.98,0.3 c-0.29,0.03-0.56,0-0.88-0.12c-2.89,0.8-5.56,0.56-7.94-0.4c-2.7-1.1-5.02-3.15-6.86-5.72L4.5,83.86 c-0.69-0.99-1.31-2.05-1.86-3.17c-0.56-1.13-1.03-2.31-1.42-3.51c-0.39-1.2-0.69-2.43-0.89-3.66C0.13,72.3,0.02,71.08,0,69.88 c-0.03-3.02,0.56-5.88,1.87-8.19C3.05,59.62,4.81,58,7.2,57.1c0.09-0.14,0.16-0.26,0.24-0.36c0.13-0.17,0.27-0.32,0.46-0.48 l0.04-0.03c0.2-0.17,0.39-0.28,0.61-0.39c0.2-0.09,0.43-0.18,0.74-0.29l0.28-0.1c12.71-4.68,21.5-10.66,27.81-16.51 c6.31-5.85,10.15-11.57,12.92-15.73l0.06-0.09c1.55-2.32,2.8-4.17,4.05-5.42l0,0c0.32-0.32,0.6-0.58,0.9-0.8 c0.31-0.23,0.63-0.41,1-0.55c0.39-0.14,0.77-0.22,1.18-0.24c0.4-0.02,0.83,0.02,1.33,0.1c1.18,0.19,2.38,0.68,3.59,1.44 c1.23,0.77,2.47,1.82,3.7,3.1c2.74,2.84,5.56,6.94,8.21,11.73c2.76,4.98,5.34,10.7,7.46,16.55c2.18,6,3.9,12.14,4.87,17.77 c0.89,5.19,1.15,9.96,0.53,13.77c-0.26,1.6-0.67,3.06-1.24,4.32c-0.56,1.24-1.29,2.31-2.19,3.18c-0.04,0.04-0.09,0.08-0.13,0.12 c-0.06,0.04-0.12,0.09-0.18,0.13c-0.59,0.39-1.16,0.67-1.73,0.85c-0.58,0.19-1.16,0.28-1.74,0.31h-0.04c-0.2,0-0.39,0-0.57-0.01 C79.22,89.44,79.05,89.43,78.89,89.41L78.89,89.41z M103.5,78.48c-1.39,0.06-2.55-1.02-2.6-2.41c-0.06-1.39,1.02-2.55,2.41-2.6 l17.6-0.66c1.38-0.04,2.54,1.04,2.6,2.41c0.05,1.39-1.02,2.55-2.41,2.61L103.5,78.48L103.5,78.48L103.5,78.48z M103,61.38 c-1.38,0.18-2.64-0.79-2.82-2.15c-0.18-1.38,0.79-2.64,2.15-2.82l16.26-2.16c1.38-0.18,2.64,0.79,2.82,2.15 c0.18,1.38-0.79,2.64-2.15,2.82L103,61.38L103,61.38L103,61.38z M99.58,45.68c-1.31,0.45-2.75-0.24-3.2-1.55 c-0.46-1.31,0.24-2.75,1.55-3.2l16.67-5.79c1.31-0.47,2.75,0.24,3.2,1.55c0.46,1.31-0.24,2.75-1.55,3.2L99.58,45.68L99.58,45.68 L99.58,45.68z M91.72,30.57c-1.2,0.69-2.74,0.27-3.42-0.94c-0.69-1.2-0.27-2.73,0.94-3.42l15.8-9.06c1.2-0.69,2.74-0.27,3.42,0.94 c0.69,1.2,0.27,2.73-0.94,3.42L91.72,30.57L91.72,30.57L91.72,30.57z"/>
             </svg>
           </div>
           <h3 class="benefit-title">Amplify Your Brand</h3>
@@ -863,13 +888,15 @@
 
   <!-- CONTACT -->
   <section id="contact">
-    <p class="section-eyebrow reveal">Get in Touch</p>
-    <h2 class="contact-title reveal">Ready to elevate<br>your next listing?</h2>
-    <p class="contact-sub reveal">Tell us about your property and we'll get you scheduled. Most bookings are confirmed within one business day.</p>
-    <div style="width:100%">
-
-      <iframe name="lc_contact_form" frameborder="0" width="100%" height="600" src="https://powderrivermedia.17hats.com/p#/embed/npzfnpgkfrgrpkchkfxcvrfpvwrbbtsz"></iframe><script type="text/javascript" src="https://powderrivermedia.17hats.com/vendor/iframeSizer.min.js"></script>
-
+    <div class="contact-inner">
+      <div class="contact-left">
+        <p class="section-eyebrow reveal">Get in Touch</p>
+        <h2 class="contact-title reveal">Ready to elevate<br>your next listing?</h2>
+        <p class="contact-sub reveal">Tell us about your property and we'll get you scheduled. Most bookings are confirmed within one business day.</p>
+      </div>
+      <div class="contact-right">
+        <iframe name="lc_contact_form" frameborder="0" width="100%" height="560" src="https://powderrivermedia.17hats.com/p#/embed/npzfnpgkfrgrpkchkfxcvrfpvwrbbtsz"></iframe><script type="text/javascript" src="https://powderrivermedia.17hats.com/vendor/iframeSizer.min.js"></script>
+      </div>
     </div>
   </section>
 
@@ -896,9 +923,13 @@
 
     function dismissLoader() {
       var loader = document.getElementById('loader');
-      if (loader) loader.classList.add('hidden');
+      if (!loader) return;
+      loader.classList.add('hidden');
+      loader.addEventListener('animationend', function() {
+        loader.style.visibility = 'hidden';
+      }, { once: true });
     }
-    setTimeout(dismissLoader, 3200);
+    setTimeout(dismissLoader, 2200);
 
     var nav = document.getElementById('main-nav');
     window.addEventListener('scroll', function() {
