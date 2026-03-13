@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Powder River Media | Baltimore Real Estate Photography</title>
+  <meta name="description" content="Powder River Media is a real estate media company built for agents who need fast, consistent, professional results. Based in Baltimore, serving Central Maryland." />
+  <meta name="author" content="Powder River Media" />
+  <link rel="canonical" href="https://powderrivermedia.com/about.html" />
+
+  <!-- Geo / Local SEO -->
+  <meta name="geo.region" content="US-MD" />
+  <meta name="geo.placename" content="Baltimore, Maryland" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://powderrivermedia.com/about.html" />
+  <meta property="og:title" content="About — Powder River Media | Baltimore Real Estate Photography" />
+  <meta property="og:description" content="Powder River Media is a real estate media company built for agents who need fast, consistent, professional results. Based in Baltimore, serving Central Maryland." />
+  <meta property="og:site_name" content="Powder River Media" />
+  <meta property="og:image" content="https://powderrivermedia.com/baltimore-real-estate-photography-living-room-coastal-natural-light.jpg" />
+  <meta property="og:image:width" content="1800" />
+  <meta property="og:image:height" content="1200" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About — Powder River Media | Baltimore Real Estate Photography" />
+  <meta name="twitter:description" content="Real estate media built on craft, relationships, and showing up. Based in Baltimore, serving Central Maryland." />
+  <meta name="twitter:image" content="https://powderrivermedia.com/baltimore-real-estate-photography-living-room-coastal-natural-light.jpg" />
+
+  <!-- Schema: Person + LocalBusiness -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jeff Sellenrick",
+      "jobTitle": "Founder & Photographer",
+      "worksFor": { "@type": "LocalBusiness", "name": "Powder River Media" },
+      "image": "https://powderrivermedia.com/jeff-sellenrick-powder-river-media.jpg",
+      "sameAs": ["https://www.instagram.com/powderriver.media"]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Powder River Media",
+      "url": "https://powderrivermedia.com",
+      "telephone": "+12406542145",
+      "email": "info@powderrivermedia.com",
+      "image": "https://powderrivermedia.com/baltimore-real-estate-photography-living-room-coastal-natural-light.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Baltimore",
+        "addressRegion": "MD",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Baltimore" },
+        { "@type": "AdministrativeArea", "name": "Central Maryland" }
+      ],
+      "sameAs": ["https://www.instagram.com/powderriver.media"]
+    }
+  ]
+  </script>
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --ink:   #1C1C1C;
+      --mid:   #5A5A5A;
+      --lt:    #E8E6E1;
+      --bg:    #FAFAF8;
+      --bgalt: #F2F0EB;
+      --gold:  #C9B882;
+      --gold-l:#ddd0a8;
+      --aqua:  #3ABFBF;
+      --dark:  #1D2B2E;
+      --cs:    'Cormorant SC', Georgia, serif;
+      --fb:    'DM Sans', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--fb);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 56px;
+      background: rgba(29,43,46,0.97);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(201,184,130,0.12);
+    }
+    .nav-logo { display: inline-flex; align-items: center; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-link {
+      font-family: var(--fb); font-size: 11px; font-weight: 500;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: rgba(250,250,248,.85); text-decoration: none; transition: color 0.3s;
+    }
+    .nav-link:hover { color: var(--gold); }
+    .nav-link.active { color: var(--gold); }
+    .nav-cta {
+      font-family: var(--fb); font-size: 11px; font-weight: 500;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(201,184,130,0.4); padding: 10px 24px; transition: all 0.4s;
+    }
+    .nav-cta:hover { color: var(--aqua); border-color: var(--aqua); }
+    @media (max-width: 860px) {
+      nav { padding: 14px 20px; }
+      .nav-link { font-size: 10px; letter-spacing: .12em; }
+      .nav-cta { padding: 8px 14px; font-size: 10px; white-space: nowrap; }
+    }
+
+    /* PAGE BANNER */
+    #page-banner {
+      background: var(--dark); padding: 140px 56px 96px;
+      text-align: center; position: relative;
+    }
+    #page-banner::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold) 25%, var(--gold) 75%, transparent);
+      opacity: .2;
+    }
+    .banner-eyebrow {
+      font-family: var(--fb); font-size: 10px; font-weight: 600;
+      letter-spacing: .28em; text-transform: uppercase; color: rgba(201,184,130,.7);
+      margin-bottom: 20px;
+    }
+    .banner-title {
+      font-family: var(--cs); font-size: clamp(40px, 5vw, 68px); font-weight: 600;
+      letter-spacing: .05em; line-height: 1.1; color: #FAFAF8; margin-bottom: 24px;
+    }
+    .banner-sub {
+      font-family: var(--fb); font-size: 16px; font-weight: 300;
+      line-height: 1.75; color: rgba(250,250,248,.5);
+      max-width: 520px; margin: 0 auto;
+    }
+
+    /* SHARED SECTION */
+    .section-eyebrow {
+      font-family: var(--fb); font-size: 10px; font-weight: 600;
+      letter-spacing: .28em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 18px; display: block;
+    }
+    .section-title {
+      font-family: var(--cs); font-size: clamp(32px, 3.5vw, 50px); font-weight: 600;
+      letter-spacing: .04em; line-height: 1.2; color: var(--ink); margin-bottom: 28px;
+    }
+    .section-title .aqua { color: var(--aqua); }
+
+    /* COMPANY SECTION */
+    #company {
+      padding: 112px 56px;
+      background: var(--bg);
+    }
+    .company-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px; align-items: center;
+    }
+    .body-text {
+      font-size: 16px; font-weight: 300; line-height: 1.85; color: var(--mid);
+    }
+    .body-text + .body-text { margin-top: 18px; }
+
+    .dark-card {
+      background: var(--dark); padding: 52px 48px; position: relative;
+    }
+    .dark-card::before {
+      content: ''; position: absolute; top: 0; left: 48px;
+      width: 56px; height: 3px; background: var(--aqua);
+    }
+    .dark-card::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 80% 20%, rgba(201,184,130,.08), transparent 60%);
+      pointer-events: none;
+    }
+    .dark-card-headline {
+      font-family: var(--cs); font-size: 30px; font-weight: 600;
+      letter-spacing: .04em; line-height: 1.2; color: #FAFAF8; margin-bottom: 18px;
+      position: relative; z-index: 1;
+    }
+    .dark-card-body {
+      font-family: var(--fb); font-size: 14px; font-weight: 300;
+      line-height: 1.8; color: rgba(250,250,248,.5);
+      position: relative; z-index: 1;
+    }
+    .pillar-list {
+      display: flex; flex-direction: column; gap: 24px; margin-top: 32px;
+      position: relative; z-index: 1;
+    }
+    .pillar-item { display: flex; gap: 16px; align-items: flex-start; }
+    .pillar-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--aqua);
+      flex-shrink: 0; margin-top: 7px;
+    }
+    .pillar-item-text {
+      font-family: var(--fb); font-size: 13px; font-weight: 300;
+      line-height: 1.7; color: rgba(250,250,248,.5);
+    }
+    .pillar-item-text strong {
+      font-weight: 500; color: rgba(250,250,248,.8); display: block; margin-bottom: 2px;
+    }
+
+    /* DIVIDER */
+    .section-divider {
+      max-width: 1100px; margin: 0 auto;
+      height: 1px; background: var(--lt);
+    }
+
+    /* JEFF SECTION */
+    #jeff {
+      padding: 112px 56px;
+      background: var(--bgalt);
+    }
+    .jeff-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 80px; align-items: center;
+    }
+    .jeff-credential-stack {
+      display: flex; flex-direction: column; gap: 3px;
+    }
+    .jeff-credential {
+      background: var(--dark); padding: 32px 40px; position: relative;
+      border-left: 3px solid transparent; transition: border-color 0.3s;
+    }
+    .jeff-credential:first-child { border-top: 3px solid var(--aqua); border-left: none; }
+    .jeff-credential-num {
+      font-family: var(--cs); font-size: 52px; font-weight: 600;
+      color: var(--gold); line-height: 1; margin-bottom: 6px;
+    }
+    .jeff-credential-label {
+      font-family: var(--fb); font-size: 11px; font-weight: 500;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: rgba(250,250,248,.38);
+    }
+
+    /* CTA */
+    #cta-block {
+      background: var(--dark); padding: 100px 56px; text-align: center; position: relative;
+    }
+    #cta-block::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold) 25%, var(--gold) 75%, transparent);
+      opacity: .2;
+    }
+    .cta-eyebrow {
+      font-family: var(--fb); font-size: 10px; font-weight: 600;
+      letter-spacing: .28em; text-transform: uppercase; color: rgba(201,184,130,.7);
+      margin-bottom: 20px;
+    }
+    .cta-title {
+      font-family: var(--cs); font-size: clamp(34px, 4vw, 56px); font-weight: 600;
+      letter-spacing: .04em; line-height: 1.15; color: #FAFAF8; margin-bottom: 20px;
+    }
+    .cta-sub {
+      font-family: var(--fb); font-size: 16px; font-weight: 300;
+      line-height: 1.75; color: rgba(250,250,248,.5);
+      max-width: 480px; margin: 0 auto 48px;
+    }
+    .btn-primary {
+      display: inline-block; background: var(--gold); color: var(--dark);
+      text-decoration: none; font-family: var(--fb); font-size: 11px; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase; padding: 17px 48px; transition: all 0.3s;
+    }
+    .btn-primary:hover { background: var(--gold-l); transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark); border-top: 1px solid rgba(255,255,255,.07);
+      padding: 52px 56px; display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 28px;
+    }
+    .footer-logo { display: inline-flex; align-items: center; text-decoration: none; }
+    .footer-right { text-align: right; }
+    .footer-links { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
+    .footer-links a { font-family: var(--fb); font-size: 13px; font-weight: 300; color: var(--gold); text-decoration: none; transition: color 0.25s; }
+    .footer-links a:hover { color: var(--aqua); }
+    .footer-legal { font-family: var(--fb); font-size: 11px; letter-spacing: .06em; color: rgba(255,255,255,.18); margin-top: 10px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      #page-banner { padding: 120px 24px 72px; }
+      #company, #jeff { padding: 72px 24px; }
+      .company-inner, .jeff-inner { grid-template-columns: 1fr; gap: 48px; }
+      #cta-block { padding: 72px 24px; }
+      footer { padding: 40px 24px; flex-direction: column; align-items: flex-start; }
+      .footer-right { text-align: left; }
+      .footer-links { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="logo-nav.svg" alt="Powder River Media" style="height:124px; width:auto;" />
+    </a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link active">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+      <!-- TODO: Replace href with Spiro.media agent login URL when available -->
+      <a href="#" class="nav-link">Agent Portal</a>
+      <a href="contact.html" class="nav-cta">Book a Shoot</a>
+    </div>
+  </nav>
+
+  <!-- PAGE BANNER -->
+  <section id="page-banner">
+    <p class="banner-eyebrow">Built on craft, relationships, and showing up.</p>
+    <h1 class="banner-title">Your Media Partner.</h1>
+  </section>
+
+  <!-- COMPANY SECTION -->
+  <section id="company">
+    <div class="company-inner">
+      <div>
+        <span class="section-eyebrow">Powder River Media</span>
+        <h2 class="section-title">Where <span class="aqua">craft</span> meets<br>the Maryland market.</h2>
+        <p class="body-text">Powder River Media delivers a full suite of listing media — photography, video, drone, floor plans, and 3D tours — for agents and brokers across Baltimore and Central Maryland. The work is built around one principle: the media you put on a listing reflects as much on you as it does on the property.</p>
+        <p class="body-text">Every deliverable arrives processed, color-corrected, and MLS-ready. Photos within 24 hours. Everything else within 48. One team, one booking, one consistent experience — listing after listing.</p>
+      </div>
+      <div>
+        <div class="dark-card">
+          <p class="dark-card-headline">Professional Media That Reflects Your Brand</p>
+          <p class="dark-card-body">The imagery you put on a listing tells buyers — and future clients — exactly how you operate. Sharp, consistent, well-produced media is one of the strongest signals you can send.</p>
+          <div class="pillar-list">
+            <div class="pillar-item">
+              <div class="pillar-dot"></div>
+              <div class="pillar-item-text"><strong>Service First, Always</strong>On time, communicates clearly, delivers on what's promised.</div>
+            </div>
+            <div class="pillar-item">
+              <div class="pillar-dot"></div>
+              <div class="pillar-item-text"><strong>Exceptional Craft</strong>Technical precision and a genuine eye for light, space, and story.</div>
+            </div>
+            <div class="pillar-item">
+              <div class="pillar-dot"></div>
+              <div class="pillar-item-text"><strong>Delivered on Time, Every Time</strong>Photos in 24 hours. All other media in 48. MLS-ready.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JEFF SECTION -->
+  <section id="jeff">
+    <div class="jeff-inner">
+      <div>
+        <picture>
+          <source srcset="jeff-sellenrick-powder-river-media.webp" type="image/webp" />
+          <img
+            src="jeff-sellenrick-powder-river-media.jpg"
+            alt="Jeff Sellenrick, Founder of Powder River Media — Baltimore Real Estate Photographer"
+            width="1400" height="1120"
+            loading="lazy"
+            style="width:100%; height:auto; display:block; margin-bottom:3px;"
+          />
+        </picture>
+        <div class="jeff-credential-stack">
+          <div class="jeff-credential">
+            <div class="jeff-credential-num">14+</div>
+            <div class="jeff-credential-label">Years behind the lens</div>
+          </div>
+          <div class="jeff-credential">
+            <div class="jeff-credential-num">2012</div>
+            <div class="jeff-credential-label">Photography since</div>
+          </div>
+          <div class="jeff-credential">
+            <div class="jeff-credential-num">Balt.</div>
+            <div class="jeff-credential-label">Based in Baltimore, MD</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2 class="section-title">Jeff Sellenrick</h2>
+        <p class="body-text">Jeff Sellenrick has been a professional photographer since 2012. Over more than a decade of shooting weddings, portraits and headshots, he built a discipline around work where there are no second chances — where the light, the moment, and the detail have to be right the first time.</p>
+        <p class="body-text" style="margin-top:18px;">Powder River Media grew from a deliberate decision: real estate agents are some of the most relationship-driven professionals in any market. They work hard to build trust with their clients, they rely on a network that notices the details, and when they find a service they can count on, they come back. Jeff built Powder River Media to be that company — the media partner agents call for every listing, refer to their colleagues, and never have to think twice about.</p>
+        <p class="body-text" style="margin-top:18px;">Based in Baltimore, serving Central Maryland.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta-block">
+    <p class="cta-eyebrow">Work Together</p>
+    <h2 class="cta-title">Ready to book a shoot?</h2>
+    <p class="cta-sub">Tell us about your property and we'll get you scheduled. Most bookings confirmed within one business day.</p>
+    <a href="contact.html" class="btn-primary">Book a Shoot</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="index.html" class="footer-logo">
+      <img src="logo-nav.svg" alt="Powder River Media" style="height:96px; width:auto; opacity:0.9;" />
+    </a>
+    <div class="footer-right">
+      <div class="footer-links">
+        <a href="https://www.instagram.com/powderriver.media" target="_blank" rel="noopener noreferrer">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@powderriver.media
+        </a>
+        <a href="mailto:info@powderrivermedia.com">info@powderrivermedia.com</a>
+        <a href="tel:2406542145">(240) 654-2145</a>
+      </div>
+      <div class="footer-legal">© 2026 Powder River Media. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
