@@ -69,9 +69,14 @@
 
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-google.png" />
+  <!-- Preload hero LCP image -->
+  <link rel="preload" as="image" href="baltimore-real-estate-photography-living-room-coastal-natural-light.webp" type="image/webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Non-render-blocking Google Fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" /></noscript>
   <link rel="preconnect" href="https://powderrivermedia.17hats.com" />
 
   <style>
@@ -221,7 +226,7 @@
       position: absolute;
       top: -25%; left: 0; right: 0; height: 150%;
       z-index: 0;
-      background: url('baltimore-real-estate-photography-living-room-coastal-natural-light.jpg') center center / cover no-repeat;
+      background: url('baltimore-real-estate-photography-living-room-coastal-natural-light.webp') center center / cover no-repeat;
     }
     #hero::before {
       content: ''; position: absolute; inset: 0; z-index: 1;
@@ -779,7 +784,7 @@
   <!-- NAV -->
   <nav id="main-nav">
     <a href="index.html" class="nav-logo">
-      <img src="logo-nav.svg" alt="Powder River Media" style="height:124px; width:auto;" />
+      <img src="logo-nav.svg" alt="Powder River Media" style="height:124px; width:auto;" fetchpriority="high" />
     </a>
     <div class="nav-links">
       <a href="about.html" class="nav-link">About</a>
@@ -922,7 +927,7 @@
     <div class="preview-grid">
       <a href="portfolio.html" class="preview-card">
         <div class="preview-card-photo">
-          <img src="baltimore-real-estate-photography-kitchen-island-waterfront-view.jpg" alt="Open kitchen with island seating and waterfront views, real estate photography Baltimore MD" loading="lazy" />
+          <picture><source srcset="baltimore-real-estate-photography-kitchen-island-waterfront-view.webp" type="image/webp" /><img src="baltimore-real-estate-photography-kitchen-island-waterfront-view.jpg" alt="Open kitchen with island seating and waterfront views, real estate photography Baltimore MD" loading="lazy" /></picture>
           <div class="preview-card-photo-overlay"><span>View Portfolio &rarr;</span></div>
         </div>
         <div class="preview-card-body">
@@ -934,7 +939,7 @@
       </a>
       <a href="portfolio.html" class="preview-card">
         <div class="preview-card-photo">
-          <img src="baltimore-real-estate-photography-kitchen-navy-cabinets-open-plan.jpg" alt="Modern open-plan kitchen with navy cabinets and island, real estate photography Baltimore MD" loading="lazy" />
+          <picture><source srcset="baltimore-real-estate-photography-kitchen-navy-cabinets-open-plan.webp" type="image/webp" /><img src="baltimore-real-estate-photography-kitchen-navy-cabinets-open-plan.jpg" alt="Modern open-plan kitchen with navy cabinets and island, real estate photography Baltimore MD" loading="lazy" /></picture>
           <div class="preview-card-photo-overlay"><span>View Portfolio &rarr;</span></div>
         </div>
         <div class="preview-card-body">
@@ -946,7 +951,7 @@
       </a>
       <a href="portfolio.html" class="preview-card">
         <div class="preview-card-photo">
-          <img src="baltimore-real-estate-photography-primary-bedroom-blue-accent-decor.jpg" alt="Staged primary bedroom with blue accent decor, real estate photography Central Maryland" loading="lazy" />
+          <picture><source srcset="baltimore-real-estate-photography-primary-bedroom-blue-accent-decor.webp" type="image/webp" /><img src="baltimore-real-estate-photography-primary-bedroom-blue-accent-decor.jpg" alt="Staged primary bedroom with blue accent decor, real estate photography Central Maryland" loading="lazy" /></picture>
           <div class="preview-card-photo-overlay"><span>View Portfolio &rarr;</span></div>
         </div>
         <div class="preview-card-body">
@@ -1086,7 +1091,7 @@
         <p class="contact-sub reveal">Tell us about your property and we'll get you scheduled. Most bookings are confirmed within one business day.</p>
       </div>
       <div class="contact-right">
-        <iframe name="lc_contact_form" frameborder="0" width="100%" height="560" src="https://powderrivermedia.17hats.com/p#/embed/npzfnpgkfrgrpkchkfxcvrfpvwrbbtsz"></iframe><script type="text/javascript" src="https://powderrivermedia.17hats.com/vendor/iframeSizer.min.js"></script>
+        <iframe name="lc_contact_form" frameborder="0" width="100%" height="560" src="https://powderrivermedia.17hats.com/p#/embed/npzfnpgkfrgrpkchkfxcvrfpvwrbbtsz" loading="lazy" title="Book a Shoot — Contact Form"></iframe><script type="text/javascript" src="https://powderrivermedia.17hats.com/vendor/iframeSizer.min.js" defer></script>
       </div>
     </div>
   </section>
