@@ -39,7 +39,7 @@
 - Year: 2026
 - Instagram: @powderriver.media
 - Email: info@powderrivermedia.com
-- Phone: 240-654-2145
+- Phone: 410-929-5407
 
 ## Technical Notes
 - Scroll reveal animation: DISABLED (was causing blank sections when viewed locally)
