@@ -35,43 +35,139 @@
   <meta property="og:image:height" content="1200" />
   <meta property="og:image:alt" content="Living room real estate photography by Powder River Media — Baltimore, MD" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Powder River Media — Real Estate Photography · Baltimore, MD" />
-  <meta name="twitter:description" content="Professional real estate photography, video, drone, and floor plans serving Baltimore and Central Maryland." />
-  <meta name="twitter:image" content="https://powderrivermedia.com/baltimore-real-estate-photography-living-room-coastal-natural-light.jpg" />
-
-  <!-- Local Business Schema -->
+  <!-- Local Business + Professional Service Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "ProfessionalService"],
     "name": "Powder River Media",
-    "description": "Professional real estate photography, video, drone, floor plans, and 3D tours serving Baltimore and Central Maryland.",
+    "description": "Professional real estate photography, video tours, drone, floor plans, and 3D tours serving Baltimore and Central Maryland agents and brokers. Photos delivered within 24 hours, MLS-ready.",
     "url": "https://powderrivermedia.com",
     "telephone": "+14109295407",
     "email": "info@powderrivermedia.com",
     "image": "https://powderrivermedia.com/baltimore-real-estate-photography-living-room-coastal-natural-light.jpg",
+    "logo": "https://powderrivermedia.com/favicon-google.png",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Baltimore",
       "addressRegion": "MD",
+      "postalCode": "21201",
       "addressCountry": "US"
     },
     "areaServed": [
       { "@type": "City", "name": "Baltimore" },
-      { "@type": "AdministrativeArea", "name": "Central Maryland" }
+      { "@type": "City", "name": "Annapolis" },
+      { "@type": "City", "name": "Columbia" },
+      { "@type": "City", "name": "Towson" },
+      { "@type": "City", "name": "Ellicott City" },
+      { "@type": "City", "name": "Bel Air" },
+      { "@type": "City", "name": "Dundalk" },
+      { "@type": "City", "name": "Catonsville" },
+      { "@type": "City", "name": "Severna Park" },
+      { "@type": "City", "name": "Glen Burnie" },
+      { "@type": "City", "name": "Lutherville" },
+      { "@type": "City", "name": "Timonium" },
+      { "@type": "City", "name": "Owings Mills" },
+      { "@type": "City", "name": "Pikesville" },
+      { "@type": "City", "name": "Pasadena" },
+      { "@type": "City", "name": "Laurel" },
+      { "@type": "City", "name": "Odenton" },
+      { "@type": "City", "name": "Gambrills" },
+      { "@type": "City", "name": "Millersville" },
+      { "@type": "City", "name": "Crofton" },
+      { "@type": "City", "name": "Arnold" },
+      { "@type": "City", "name": "Severn" },
+      { "@type": "City", "name": "Jessup" },
+      { "@type": "City", "name": "Hanover" },
+      { "@type": "City", "name": "Cockeysville" },
+      { "@type": "City", "name": "Hunt Valley" },
+      { "@type": "City", "name": "Sparks" },
+      { "@type": "City", "name": "Hampstead" },
+      { "@type": "City", "name": "Westminster" },
+      { "@type": "City", "name": "Mt. Airy" },
+      { "@type": "City", "name": "Eldersburg" },
+      { "@type": "City", "name": "Sykesville" },
+      { "@type": "City", "name": "Reisterstown" },
+      { "@type": "City", "name": "Randallstown" },
+      { "@type": "City", "name": "Middle River" },
+      { "@type": "City", "name": "Essex" },
+      { "@type": "City", "name": "White Marsh" },
+      { "@type": "City", "name": "Perry Hall" },
+      { "@type": "City", "name": "Nottingham" },
+      { "@type": "City", "name": "Forest Hill" },
+      { "@type": "City", "name": "Abingdon" },
+      { "@type": "City", "name": "Edgewood" }
     ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Real Estate Media Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Real Estate Photography", "description": "Professional interior and exterior listing photos delivered within 24 hours, MLS-ready." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Real Estate Video Tours", "description": "Cinematic video walkthroughs that bring listings to life for online buyers." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drone Photography & Video", "description": "FAA-compliant aerial photography and video showcasing property context, lot size, and neighborhood." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Floor Plans", "description": "Accurate, professionally drawn floor plans that help buyers understand a property's layout." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "3D Virtual Tours", "description": "Interactive 3D tours that let buyers explore listings remotely, increasing engagement and qualified showings." } }
+      ]
+    },
     "sameAs": [
       "https://www.instagram.com/powderriver.media"
     ],
     "priceRange": "$$",
-    "serviceType": [
-      "Real Estate Photography",
-      "Real Estate Video",
-      "Drone Photography",
-      "Floor Plans",
-      "3D Virtual Tours"
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How quickly will I receive my photos after a shoot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Powder River Media delivers all photos within 24 hours of your shoot — processed, color-corrected, and MLS-ready."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What areas of Maryland do you serve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We serve Baltimore City and Central Maryland, including Annapolis, Columbia, Towson, Ellicott City, Bel Air, Catonsville, Glen Burnie, Owings Mills, and dozens of other communities throughout the region."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer drone photography for real estate listings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Powder River Media offers FAA-compliant drone photography and video for real estate listings across Baltimore and Central Maryland."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What services does Powder River Media offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer professional real estate photography, video tours, drone photography and video, floor plans, and 3D virtual tours — everything an agent needs to market a listing effectively."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are your photos MLS-ready?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All photos are delivered fully processed, color-corrected, and sized to MLS specifications so you can upload and go."
+        }
+      }
     ]
   }
   </script>
