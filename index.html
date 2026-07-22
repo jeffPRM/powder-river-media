@@ -133,7 +133,7 @@
         "name": "How quickly will I receive my photos after a shoot?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Powder River Media delivers all photos within 24 hours of your shoot — processed, color-corrected, and MLS-ready."
+          "text": "Photos are delivered within 24 hours of your shoot — fully processed, color-corrected, and sized to MLS specifications. Video, drone footage, floor plans, and 3D tours are typically delivered within 48 hours."
         }
       },
       {
@@ -141,7 +141,7 @@
         "name": "What areas of Maryland do you serve?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We serve Baltimore City and Central Maryland, including Annapolis, Columbia, Towson, Ellicott City, Bel Air, Catonsville, Glen Burnie, Owings Mills, and dozens of other communities throughout the region."
+          "text": "We serve Central Maryland. That includes Baltimore City, Baltimore County, Harford County, Carroll County, Howard County and parts of Anne Arundel County. Communities include Severna Park, Glen Burnie, Pasadena, Arnold, Crofton, Odenton, Gambrills, Millersville, Hanover, Severn, Jessup, Towson, Ellicott City, Bel Air, Catonsville, Owings Mills, Pikesville, Lutherville, Timonium, Cockeysville, Hunt Valley, Reisterstown, Randallstown, Westminster, Eldersburg, Sykesville, Mt. Airy, Hampstead, Columbia, Laurel, White Marsh, Perry Hall, Middle River, Essex, Dundalk, Forest Hill, Abingdon, Edgewood and Baltimore."
         }
       },
       {
@@ -149,7 +149,7 @@
         "name": "Do you offer drone photography for real estate listings?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Powder River Media offers FAA-compliant drone photography and video for real estate listings across Baltimore and Central Maryland."
+          "text": "Yes. All drone photography and video is captured by a Part 107 Certified pilot and fully FAA-compliant, giving agents aerial context, lot size, and neighborhood views that ground-level photos can't show. Drone service can occasionally be affected by restricted airspace, temporary flight restrictions, or weather conditions on the day of the shoot."
         }
       },
       {
@@ -166,6 +166,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes. All photos are delivered fully processed, color-corrected, and sized to MLS specifications so you can upload and go."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I own the rights to use these photos on the MLS and in my own marketing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Photos are delivered unbranded with wide usage rights, so you can use them on the MLS, your brokerage's marketing, your own website, and social media."
         }
       }
     ]
@@ -703,6 +711,26 @@
       .benefits-grid { grid-template-columns: 1fr; gap: 16px; }
     }
 
+    /* FAQ */
+    #faq { background: var(--bg); padding: 100px 56px; border-top: 1px solid var(--lt); }
+    .faq-inner { max-width: 900px; margin: 0 auto; }
+    .faq-header { text-align: center; margin-bottom: 56px; }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-top: 1px solid var(--lt); padding: 32px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--lt); }
+    .faq-question {
+      font-family: var(--cs); font-size: 20px; font-weight: 600;
+      letter-spacing: .02em; color: var(--ink); margin-bottom: 12px;
+    }
+    .faq-answer {
+      font-family: var(--fb); font-size: 14px; font-weight: 300;
+      line-height: 1.85; color: var(--mid);
+    }
+    @media (max-width: 860px) {
+      #faq { padding: 72px 24px; }
+      .faq-question { font-size: 18px; }
+    }
+
     /* CONTACT */
     #contact { padding: 112px 56px; max-width: 1200px; margin: 0 auto; }
     .contact-inner {
@@ -1197,6 +1225,42 @@
       </div>
       <div class="contact-right">
         <iframe name="lc_contact_form" frameborder="0" width="100%" height="560" src="https://powderrivermedia.17hats.com/p#/embed/npzfnpgkfrgrpkchkfxcvrfpvwrbbtsz" loading="lazy" title="Book a Shoot — Contact Form"></iframe><script type="text/javascript" src="https://powderrivermedia.17hats.com/vendor/iframeSizer.min.js" defer></script>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="faq-inner">
+      <div class="faq-header reveal">
+        <p class="section-eyebrow">Common Questions</p>
+        <h2 class="section-title">Frequently Asked<br><span class="aqua">Questions.</span></h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-question">How quickly will I receive my photos after a shoot?</h3>
+          <p class="faq-answer">Photos are delivered within 24 hours of your shoot — fully processed, color-corrected, and sized to MLS specifications. Video, drone footage, floor plans, and 3D tours are typically delivered within 48 hours.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">What areas of Maryland do you serve?</h3>
+          <p class="faq-answer">We serve Central Maryland. That includes Baltimore City, Baltimore County, Harford County, Carroll County, Howard County and parts of Anne Arundel County. Communities include Severna Park, Glen Burnie, Pasadena, Arnold, Crofton, Odenton, Gambrills, Millersville, Hanover, Severn, Jessup, Towson, Ellicott City, Bel Air, Catonsville, Owings Mills, Pikesville, Lutherville, Timonium, Cockeysville, Hunt Valley, Reisterstown, Randallstown, Westminster, Eldersburg, Sykesville, Mt. Airy, Hampstead, Columbia, Laurel, White Marsh, Perry Hall, Middle River, Essex, Dundalk, Forest Hill, Abingdon, Edgewood and Baltimore.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Do you offer drone photography for real estate listings?</h3>
+          <p class="faq-answer">Yes. All drone photography and video is captured by a Part 107 Certified pilot and fully FAA-compliant, giving agents aerial context, lot size, and neighborhood views that ground-level photos can't show. Drone service can occasionally be affected by restricted airspace, temporary flight restrictions, or weather conditions on the day of the shoot.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">What services does Powder River Media offer?</h3>
+          <p class="faq-answer">We offer professional real estate photography, video tours, drone photography and video, floor plans, and 3D virtual tours — everything an agent needs to market a listing effectively.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Are your photos MLS-ready?</h3>
+          <p class="faq-answer">Yes. All photos are delivered fully processed, color-corrected, and sized to MLS specifications so you can upload and go.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Do I own the rights to use these photos on the MLS and in my own marketing?</h3>
+          <p class="faq-answer">Yes. Photos are delivered unbranded with wide usage rights, so you can use them on the MLS, your brokerage's marketing, your own website, and social media.</p>
+        </div>
       </div>
     </div>
   </section>
