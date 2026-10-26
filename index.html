@@ -941,7 +941,9 @@
     .footer-affil img { height: 84px; width: auto; display: block; opacity: .7; transition: opacity .25s; }
     .footer-affil a:hover img { opacity: 1; }
     .footer-legal { margin-top: 28px; text-align: left; }
-    @media (max-width: 768px) { footer { padding: 40px 24px 28px; } .footer-nav { gap: 40px; } .footer-affil img { height: 64px; } }
+    .footer-affil img.affil-ppa { height: 88px; }
+    .footer-affil img.affil-faa { height: 68px; }
+    @media (max-width: 768px) { footer { padding: 40px 24px 28px; } .footer-nav { gap: 40px; } .footer-affil img.affil-ppa { height: 68px; } .footer-affil img.affil-faa { height: 52px; } }
   </style>
 </head>
 <body>
@@ -1350,8 +1352,8 @@
       </div>
     </div>
     <div class="footer-affil">
-      <a href="https://www.ppa.com" target="_blank" rel="noopener"><img src="/Logos/ppa-member-white.png" alt="Proud member of Professional Photographers of America" loading="lazy"></a>
-      <img src="/Logos/faa-part107-badge-white.png" alt="FAA certified Part 107 remote drone pilot" loading="lazy">
+      <a href="https://www.ppa.com" target="_blank" rel="noopener"><img class="affil-ppa" src="/Logos/ppa-member-white.png" alt="Proud member of Professional Photographers of America" loading="lazy"></a>
+      <img class="affil-faa" src="/Logos/faa-part107-badge-white.png" alt="FAA certified Part 107 remote drone pilot" loading="lazy">
     </div>
     <div class="footer-legal">© 2026 Powder River Media. All rights reserved.</div>
   </footer>
