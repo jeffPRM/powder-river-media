@@ -31,4 +31,17 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://powderrivermedia.com/blog/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://powderrivermedia.com/blog/professional-photos-matter-in-real-estate/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
