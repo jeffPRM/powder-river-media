@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
     <loc>https://powderrivermedia.com/</loc>
@@ -9,6 +9,25 @@
 
   <url>
     <loc>https://powderrivermedia.com/services.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://powderrivermedia.com/real-estate-photography-baltimore.html</loc>
+    <image:image>
+      <image:loc>https://powderrivermedia.com/baltimore-real-estate-photography-rowhome-living-room-exposed-brick-tray-ceiling.jpg</image:loc>
+      <image:caption>Rowhome living room with an exposed brick wall, tray ceiling and hardwood floors, photographed for a Baltimore real estate listing</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://powderrivermedia.com/baltimore-real-estate-photography-kitchen-white-cabinets-stainless-window-over-sink.jpg</image:loc>
+      <image:caption>Kitchen with white cabinets, stainless steel appliances and a window over the sink showing greenery outside, exposure balanced so the window is not blown out</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://powderrivermedia.com/baltimore-real-estate-photography-aerial-drone-modern-townhomes-exterior.jpg</image:loc>
+      <image:caption>Aerial drone photo of a row of modern townhomes with rear decks and roof terraces, shot for a Maryland real estate listing</image:caption>
+    </image:image>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
