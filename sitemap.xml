@@ -33,6 +33,44 @@
   </url>
 
   <url>
+    <loc>https://powderrivermedia.com/floor-plans-baltimore.html</loc>
+    <image:image>
+      <image:loc>https://powderrivermedia.com/baltimore-real-estate-floor-plan-three-level-rowhome.jpg</image:loc>
+      <image:caption>Color floor plan of a three-level Baltimore rowhome with every room labeled and measured</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://powderrivermedia.com/baltimore-real-estate-floor-plan-single-level-home-garage.jpg</image:loc>
+      <image:caption>Color floor plan of a single-level home with three bedrooms, a family room, an office and a two-car garage, with room measurements</image:caption>
+    </image:image>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://powderrivermedia.com/real-estate-drone-photography-baltimore.html</loc>
+    <image:image>
+      <image:loc>https://powderrivermedia.com/baltimore-real-estate-drone-photography-home-with-pool-wooded-lot.jpg</image:loc>
+      <image:caption>Aerial drone photo of a home with a swimming pool in a clearing surrounded by dense woods on a large Maryland lot</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://powderrivermedia.com/baltimore-real-estate-drone-photography-rowhome-block-location-pin-skyline.jpg</image:loc>
+      <image:caption>Aerial drone photo of a Baltimore rowhome block marked with a location pin, with a large park and the downtown skyline in the distance</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://powderrivermedia.com/baltimore-real-estate-photography-victorian-ground-level-street-view.jpg</image:loc>
+      <image:caption>Victorian house photographed from street level, with a light pole and a sidewalk in front of the lot</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://powderrivermedia.com/baltimore-real-estate-drone-photography-hero-shot-victorian-elevated-view.jpg</image:loc>
+      <image:caption>Victorian house photographed by drone from a raised angle, showing the full front, the porches and the roofline</image:caption>
+    </image:image>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
     <loc>https://powderrivermedia.com/portfolio.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
