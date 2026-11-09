@@ -30,11 +30,11 @@
   <meta property="og:title" content="Real Estate Media Blog | Powder River Media">
   <meta property="og:description" content="Practical guidance on real estate photography, video, drone and floor plans for agents across Baltimore and Central Maryland.">
   <meta property="og:site_name" content="Powder River Media">
-  <meta property="og:image" content="https://powderrivermedia.com/blog/professional-photos-matter-in-real-estate/baltimore-real-estate-photography-living-room-coffered-wood-ceiling-balcony-water-views.jpg">
+  <meta property="og:image" content="https://powderrivermedia.com/blog/overlea-real-estate-photography/overlea-real-estate-photography-three-story-flip-front-porch-exterior.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Real Estate Media Blog | Powder River Media">
   <meta name="twitter:description" content="Practical guidance on real estate photography, video, drone and floor plans for agents across Baltimore and Central Maryland.">
-  <meta name="twitter:image" content="https://powderrivermedia.com/blog/professional-photos-matter-in-real-estate/baltimore-real-estate-photography-living-room-coffered-wood-ceiling-balcony-water-views.jpg">
+  <meta name="twitter:image" content="https://powderrivermedia.com/blog/overlea-real-estate-photography/overlea-real-estate-photography-three-story-flip-front-porch-exterior.jpg">
   <script type="application/ld+json">
 [
   {
@@ -375,6 +375,18 @@
     .footer-affil img.affil-faa { height: 68px; }
     @media (max-width: 768px) { footer { padding: 40px 24px 28px; } .footer-nav { gap: 40px; } .footer-affil img.affil-ppa { height: 68px; } .footer-affil img.affil-faa { height: 52px; } }
   
+    /* SERVICES DROPDOWN (Nov 2026) */
+    .nav-item { position: relative; display: flex; align-items: center; }
+    .nav-dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 26px; opacity: 0; visibility: hidden; transition: opacity 0.25s, visibility 0.25s; z-index: 1002; }
+    .nav-dropdown-inner { display: flex; flex-direction: column; min-width: 220px; background: rgba(29,43,46,0.98); border: 1px solid rgba(201,184,130,0.2); padding: 8px 0; }
+    .nav-dropdown-inner a { font-family: var(--fb); font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: rgba(250,250,248,.85); text-decoration: none; padding: 12px 24px; white-space: nowrap; transition: color 0.3s, background 0.3s; }
+    .nav-dropdown-inner a:hover, .nav-dropdown-inner a:focus { color: var(--gold); background: rgba(250,250,248,.05); }
+    .nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown { opacity: 1; visibility: visible; }
+    .mobile-subnav { display: flex; flex-flow: row wrap; justify-content: center; gap: 12px 22px; max-width: 320px; margin-top: -12px; }
+    .mobile-subnav a { font-family: var(--fb); font-size: 11px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: rgba(250,250,248,.6); text-decoration: none; transition: color 0.3s; }
+    .mobile-subnav a:hover { color: var(--aqua); }
+    @media (max-width: 860px) { .mobile-nav { overflow-y: auto; justify-content: flex-start; padding: 176px 0 40px; gap: 28px; } .mobile-nav > :first-child { margin-top: auto; } .mobile-nav > :last-child { margin-bottom: auto; } }
+  
 
 .blog-hero{padding-top:176px}
 @media(max-width:768px){.blog-hero{padding-top:136px}}
@@ -422,19 +434,7 @@
 .blog-cta h2{font-family:var(--cs);font-size:clamp(30px,3.5vw,46px);font-weight:600;letter-spacing:.04em;color:#FAFAF8;margin-bottom:16px}
 .blog-cta p{color:rgba(250,250,248,.7);font-size:16px;font-weight:300;margin-bottom:32px}
 @media(max-width:700px){.blog-cta{padding:64px 24px}}
-
-    /* SERVICES DROPDOWN (Nov 2026) */
-    .nav-item { position: relative; display: flex; align-items: center; }
-    .nav-dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding-top: 26px; opacity: 0; visibility: hidden; transition: opacity 0.25s, visibility 0.25s; z-index: 1002; }
-    .nav-dropdown-inner { display: flex; flex-direction: column; min-width: 220px; background: rgba(29,43,46,0.98); border: 1px solid rgba(201,184,130,0.2); padding: 8px 0; }
-    .nav-dropdown-inner a { font-family: var(--fb); font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: rgba(250,250,248,.85); text-decoration: none; padding: 12px 24px; white-space: nowrap; transition: color 0.3s, background 0.3s; }
-    .nav-dropdown-inner a:hover, .nav-dropdown-inner a:focus { color: var(--gold); background: rgba(250,250,248,.05); }
-    .nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown { opacity: 1; visibility: visible; }
-    .mobile-subnav { display: flex; flex-flow: row wrap; justify-content: center; gap: 12px 22px; max-width: 320px; margin-top: -12px; }
-    .mobile-subnav a { font-family: var(--fb); font-size: 11px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: rgba(250,250,248,.6); text-decoration: none; transition: color 0.3s; }
-    .mobile-subnav a:hover { color: var(--aqua); }
-    @media (max-width: 860px) { .mobile-nav { overflow-y: auto; justify-content: flex-start; padding: 176px 0 40px; gap: 28px; } .mobile-nav > :first-child { margin-top: auto; } .mobile-nav > :last-child { margin-bottom: auto; } }
-  </style>
+</style>
 </head>
 <body>
 <nav>
@@ -470,7 +470,7 @@
   <h1 class="banner-title">Real Estate Media Blog</h1>
   <p class="blog-hero-meta blog-hero-sub">Practical guidance on real estate photography, video, drone and floor plans for agents across Baltimore and Central Maryland.</p>
 </section>
-<section class="blog-wrap blog-wrap-wide"><div class="blog-grid"><a class="blog-card" href="/blog/professional-photos-matter-in-real-estate/"><div class="blog-card-img"><picture><source type="image/webp" srcset="/blog/professional-photos-matter-in-real-estate/baltimore-real-estate-photography-living-room-coffered-wood-ceiling-balcony-water-views.webp"><img src="/blog/professional-photos-matter-in-real-estate/baltimore-real-estate-photography-living-room-coffered-wood-ceiling-balcony-water-views.jpg" width="1600" height="1067" alt="Bright living room with a coffered ceiling and waterfront view, a real estate listing photo shot in Baltimore" loading="lazy" decoding="async"></picture></div><div class="blog-card-text"><p class="blog-card-date">October 26, 2026</p><h2>Why Do Professional Photos Matter in Real Estate?</h2><p>Professional photos matter in real estate twice over: they sell the home, and your next seller uses them to judge you. Here is how.</p></div></a></div></section>
+<section class="blog-wrap blog-wrap-wide"><div class="blog-grid"><a class="blog-card" href="/blog/overlea-real-estate-photography/"><div class="blog-card-img"><picture><source type="image/webp" srcset="/blog/overlea-real-estate-photography/overlea-real-estate-photography-three-story-flip-front-porch-exterior.webp"><img src="/blog/overlea-real-estate-photography/overlea-real-estate-photography-three-story-flip-front-porch-exterior.jpg" width="1600" height="1062" alt="Overlea real estate photography of a three-story renovated house with a covered front porch" loading="lazy" decoding="async"></picture></div><div class="blog-card-text"><p class="blog-card-date">November 9, 2026</p><h2>Overlea Real Estate Photography for Agents</h2><p>Overlea real estate photography for agents: what the homes are like, how I shoot them and a recent flip on a hill above a park.</p></div></a><a class="blog-card" href="/blog/professional-photos-matter-in-real-estate/"><div class="blog-card-img"><picture><source type="image/webp" srcset="/blog/professional-photos-matter-in-real-estate/baltimore-real-estate-photography-living-room-coffered-wood-ceiling-balcony-water-views.webp"><img src="/blog/professional-photos-matter-in-real-estate/baltimore-real-estate-photography-living-room-coffered-wood-ceiling-balcony-water-views.jpg" width="1600" height="1067" alt="Bright living room with a coffered ceiling and waterfront view, a real estate listing photo shot in Baltimore" loading="lazy" decoding="async"></picture></div><div class="blog-card-text"><p class="blog-card-date">October 26, 2026</p><h2>Why Do Professional Photos Matter in Real Estate?</h2><p>Professional photos matter in real estate twice over: they sell the home, and your next seller uses them to judge you. Here is how.</p></div></a></div></section>
 <section class="blog-cta">
   <h2>Book your next shoot</h2>
   <p>Serving Baltimore and Central Maryland.</p>
