@@ -98,14 +98,14 @@
 
   <url>
     <loc>https://powderrivermedia.com/portfolio.html</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://powderrivermedia.com/about.html</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -125,37 +125,9 @@
 
   <url>
     <loc>https://powderrivermedia.com/real-estate-photographer-hampden.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://powderrivermedia.com/blog/</loc>
-    <lastmod>2026-11-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://powderrivermedia.com/blog/overlea-real-estate-photography/</loc>
-    <lastmod>2026-11-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://powderrivermedia.com/blog/roland-park-airbnb-photography/</loc>
-    <lastmod>2026-11-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://powderrivermedia.com/blog/professional-photos-matter-in-real-estate/</loc>
-    <lastmod>2026-11-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 
   <url>
@@ -167,7 +139,7 @@
 
   <url>
     <loc>https://powderrivermedia.com/real-estate-photographer-federal-hill.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -384,7 +356,7 @@
 
   <url>
     <loc>https://powderrivermedia.com/northern-anne-arundel-county-real-estate-photographer.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -405,14 +377,14 @@
 
   <url>
     <loc>https://powderrivermedia.com/highlandtown-real-estate-photographer.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://powderrivermedia.com/locust-point-real-estate-photographer.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -426,14 +398,14 @@
 
   <url>
     <loc>https://powderrivermedia.com/mount-vernon-real-estate-photographer.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://powderrivermedia.com/mt-washington-real-estate-photographer.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -779,5 +751,75 @@
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://powderrivermedia.com/blog/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://powderrivermedia.com/blog/bright-mls-photo-requirements/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://powderrivermedia.com/blog/how-to-prepare-a-listing-for-photography/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://powderrivermedia.com/blog/market-luxury-real-estate-listing-maryland/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://powderrivermedia.com/blog/real-estate-floor-plan-for-every-listing/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://powderrivermedia.com/blog/real-estate-listing-marketing-checklist/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://powderrivermedia.com/blog/real-estate-video-ideas-for-agents/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://powderrivermedia.com/blog/overlea-real-estate-photography/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://powderrivermedia.com/blog/roland-park-airbnb-photography/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://powderrivermedia.com/blog/professional-photos-matter-in-real-estate/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
