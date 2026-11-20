@@ -358,10 +358,12 @@
     }
     .hero-content { position: relative; z-index: 3; max-width: 800px; }
     .hero-eyebrow {
-      font-family: var(--fb); font-size: 10px; font-weight: 600;
+      font-family: var(--fb); font-size: 20px; font-weight: 600;
       letter-spacing: .28em; text-transform: uppercase; color: rgba(201,184,130,.7);
+      width: min(1200px, 92vw); margin-left: calc(50% - min(1200px, 92vw) / 2);
       margin-bottom: 28px; opacity: 0; animation: fadeUp 0.7s 0.15s ease forwards;
     }
+    @media (max-width: 860px) { .hero-eyebrow { font-size: 12px; width: auto; margin-left: 0; } }
     .hero-title {
       font-family: var(--cs); font-size: clamp(52px, 7.5vw, 92px); font-weight: 600;
       letter-spacing: .05em; line-height: 1.05; color: #FAFAF8;
